@@ -16,7 +16,7 @@ export function attach(modal) {
         }
     };
     modal.addEventListener('keydown', handleKey);
-    modal.querySelector('select').focus({ preventScroll: true });
+    modal.querySelector('select, [data-modal-close]')?.focus({ preventScroll: true });
     handlers.set(modal, () => {
         modal.removeEventListener('keydown', handleKey);
         if (opener?.isConnected) opener.focus({ preventScroll: true });

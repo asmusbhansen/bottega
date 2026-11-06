@@ -6,7 +6,6 @@
 .equipment-market-lab__new-game-group { display: flex; flex: 0 0 auto; align-items: center; gap: .3rem; margin-left: auto; }
 .equipment-market-lab__new-game-group .equipment-market-lab__new-game { margin-left: 0; }
 .equipment-market-lab__download-rulebook { display: inline-flex; flex: 0 0 auto; min-height: 3.2rem; align-items: center; justify-content: center; padding: .36rem .72rem; border: 1px solid rgba(227, 195, 139, .75); border-radius: 2px; background: #393237; color: #f5f3ec; font: inherit; text-decoration: none; white-space: nowrap; }
-.equipment-market-lab__download-rulebook:focus-visible { outline: 2px solid #f5f3ec; outline-offset: 3px; }
 .equipment-market-lab .equipment-market-lab__actions .equipment-market-lab__action-button, .equipment-market-lab .equipment-market-choice .equipment-market-lab__action-button { display: inline-flex; flex: 0 0 auto; min-height: 3.2rem; align-items: center; justify-content: center; padding: .36rem .72rem; border: 1px solid #e3c38b; border-radius: 2px; background: #4b4147; color: #f5f3ec; font: inherit; font-weight: 700; white-space: nowrap; cursor: pointer; touch-action: manipulation; }
 .equipment-market-lab .equipment-market-lab__actions .equipment-market-lab__action-button:not(:disabled), .equipment-market-lab .equipment-market-choice .equipment-market-lab__action-button:not(:disabled) { border-color: #e3c38b; background: #e3c38b; color: #292528; animation: available-action-pulse 1.4s ease-in-out infinite; }
 @keyframes available-action-pulse {
@@ -20,8 +19,9 @@
 .equipment-market-action__parameter { display: inline-flex; flex: 0 0 auto; align-items: center; gap: .24rem; color: #bbbcc2; white-space: nowrap; }
 .equipment-market-action__parameter select { min-height: 3.2rem; min-width: 5.6rem; padding: .32rem 1.4rem .32rem .52rem; border: 1px solid rgba(245, 243, 236, .38); border-radius: 2px; background: #292528; color: #f5f3ec; font: inherit; }
 .equipment-market-lab__new-game { flex: 0 0 auto; margin-left: auto; border: 1px solid rgba(227, 195, 139, .75); border-radius: 2px; background: #393237; color: #f5f3ec; font: inherit; cursor: pointer; }
-.equipment-market-lab__new-game:hover { background: #4b4147; }
-.equipment-market-lab__new-game:focus-visible { outline: 2px solid #e3c38b; outline-offset: 2px; }
+.equipment-market-lab__download-rulebook:visited { color: #f5f3ec; }
+.equipment-market-lab__new-game:hover, .equipment-market-lab__download-rulebook:hover { background: #4b4147; color: #f5f3ec; text-decoration: none; }
+.equipment-market-lab__new-game:focus-visible, .equipment-market-lab__download-rulebook:focus-visible { outline: 2px solid #e3c38b; outline-offset: 2px; }
 .equipment-market-lab__action-log, .equipment-market-lab__legal-actions-section { box-sizing: border-box; grid-column: 1 / span 6; min-width: 0; padding: .2rem 0; color: #f5f3ec; font: .78rem var(--font); }
 .equipment-market-lab__legal-actions-section { grid-row: 6; }
 .equipment-market-lab__action-log { grid-row: 7; }
