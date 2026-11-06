@@ -1,0 +1,837 @@
+{
+  "cards": [
+    {
+      "name": "Quill Knife",
+      "quantity": 2,
+      "theme": "Vellum",
+      "cost": {
+        "vellum": 2,
+        "glass": 1,
+        "bronze": 0,
+        "mercury": 0
+      },
+      "vp": 2,
+      "build_rewards": [
+        {
+          "kind": "Gain",
+          "resource": "Bronze",
+          "amount": 1
+        }
+      ],
+      "triggered_rewards": [],
+      "worker_spots": [
+        {
+          "rewards": [
+            {
+              "kind": "Gain",
+              "resource": "Vellum",
+              "amount": 1
+            }
+          ],
+          "condition": "Two"
+        }
+      ],
+      "route_modifier": "Vellum"
+    },
+    {
+      "name": "Magnifier",
+      "quantity": 2,
+      "theme": "Vellum",
+      "cost": {
+        "vellum": 2,
+        "glass": 0,
+        "bronze": 0,
+        "mercury": 0
+      },
+      "vp": 1,
+      "build_rewards": [
+        {
+          "kind": "Gain",
+          "resource": "Glass",
+          "amount": 1
+        }
+      ],
+      "triggered_rewards": [],
+      "worker_spots": [
+        {
+          "rewards": [
+            {
+              "kind": "Demolish"
+            }
+          ],
+          "condition": "Five"
+        }
+      ],
+      "route_modifier": null
+    },
+    {
+      "name": "Tool Rack",
+      "quantity": 2,
+      "theme": "Glass",
+      "cost": {
+        "vellum": 1,
+        "glass": 0,
+        "bronze": 2,
+        "mercury": 0
+      },
+      "vp": 3,
+      "build_rewards": [
+        {
+          "kind": "Reclaim",
+          "resource": null,
+          "amount": 1
+        }
+      ],
+      "triggered_rewards": [
+        {
+          "kind": "Passive",
+          "rewards": [
+            {
+              "kind": "Gain",
+              "resource": "Bronze",
+              "amount": 1
+            }
+          ],
+          "event": "RoundEnd",
+          "theme": "Any",
+          "owner": null
+        }
+      ],
+      "worker_spots": [],
+      "route_modifier": null
+    },
+    {
+      "name": "Gears",
+      "quantity": 2,
+      "theme": "Bronze",
+      "cost": {
+        "vellum": 2,
+        "glass": 1,
+        "bronze": 1,
+        "mercury": 0
+      },
+      "vp": 2,
+      "build_rewards": [],
+      "triggered_rewards": [
+        {
+          "kind": "Passive",
+          "rewards": [
+            {
+              "kind": "Gain",
+              "resource": "Vellum",
+              "amount": 1,
+              "scaler": {
+                "source": "Dice",
+                "owner": "Self",
+                "factor": 1,
+                "max": 1,
+                "filter": {
+                  "pips": 4
+                }
+              }
+            }
+          ],
+          "event": "RoundEnd",
+          "theme": null,
+          "owner": null
+        }
+      ],
+      "worker_spots": [],
+      "route_modifier": null
+    },
+    {
+      "name": "Melting Pot",
+      "quantity": 2,
+      "theme": "Bronze",
+      "cost": {
+        "vellum": 1,
+        "glass": 0,
+        "bronze": 2,
+        "mercury": 0
+      },
+      "vp": 2,
+      "build_rewards": [],
+      "triggered_rewards": [],
+      "worker_spots": [
+        {
+          "rewards": [
+            {
+              "kind": "Gain",
+              "resource": "Glass",
+              "amount": 1
+            }
+          ],
+          "condition": "Three",
+          "capacity": 1
+        },
+        {
+          "rewards": [
+            {
+              "kind": "Gain",
+              "resource": "Vellum",
+              "amount": 1
+            }
+          ],
+          "condition": "Three",
+          "capacity": 1
+        }
+      ],
+      "route_modifier": "Bronze"
+    },
+    {
+      "name": "Abacus",
+      "quantity": 2,
+      "theme": "Bronze",
+      "cost": {
+        "vellum": 0,
+        "glass": 1,
+        "bronze": 2,
+        "mercury": 0
+      },
+      "vp": 3,
+      "build_rewards": [
+        {
+          "kind": "Gain",
+          "resource": "Mercury",
+          "amount": 1
+        }
+      ],
+      "triggered_rewards": [],
+      "worker_spots": [
+        {
+          "rewards": [
+            {
+              "kind": "Gain",
+              "resource": "Bronze",
+              "amount": 1,
+              "scaler": {
+                "source": "Equipment",
+                "owner": "Self",
+                "factor": 1,
+                "max": 2,
+                "filter": {
+                  "theme": "Mercury"
+                }
+              }
+            }
+          ],
+          "condition": "Six"
+        }
+      ],
+      "route_modifier": null
+    },
+    {
+      "name": "Ruler",
+      "quantity": 2,
+      "theme": "Vellum",
+      "cost": {
+        "vellum": 1,
+        "glass": 0,
+        "bronze": 1,
+        "mercury": 0
+      },
+      "vp": 3,
+      "build_rewards": [],
+      "triggered_rewards": [
+        {
+          "kind": "Passive",
+          "rewards": [
+            {
+              "kind": "Gain",
+              "resource": "Vellum",
+              "amount": 1,
+              "scaler": {
+                "source": "Dice",
+                "owner": "Self",
+                "factor": 1,
+                "max": 1,
+                "filter": {
+                  "pips": 1
+                }
+              }
+            }
+          ],
+          "event": "PlacementCommissionLow",
+          "theme": "Vellum",
+          "owner": "Self"
+        }
+      ],
+      "worker_spots": [],
+      "route_modifier": null
+    },
+    {
+      "name": "Scales",
+      "quantity": 2,
+      "theme": "Bronze",
+      "cost": {
+        "vellum": 0,
+        "glass": 1,
+        "bronze": 1,
+        "mercury": 0
+      },
+      "vp": 1,
+      "build_rewards": [
+        {
+          "kind": "Gain",
+          "resource": "Any",
+          "amount": 1
+        }
+      ],
+      "triggered_rewards": [],
+      "worker_spots": [
+        {
+          "rewards": [
+            {
+              "kind": "Trade",
+              "resource": null,
+              "amount": 0,
+              "max": 2
+            }
+          ],
+          "condition": "One"
+        }
+      ],
+      "route_modifier": "Any"
+    },
+    {
+      "name": "Lab Bench",
+      "quantity": 2,
+      "theme": "Mercury",
+      "cost": {
+        "vellum": 2,
+        "glass": 2,
+        "bronze": 0,
+        "mercury": 0
+      },
+      "vp": 3,
+      "build_rewards": [],
+      "triggered_rewards": [
+        {
+          "kind": "Passive",
+          "rewards": [
+            {
+              "kind": "Gain",
+              "resource": "Vellum",
+              "amount": 1
+            }
+          ],
+          "event": "Build",
+          "theme": "Mercury",
+          "owner": "Self"
+        },
+        {
+          "kind": "Passive",
+          "rewards": [
+            {
+              "kind": "Gain",
+              "resource": "Bronze",
+              "amount": 2
+            }
+          ],
+          "event": "Build",
+          "theme": "Vellum",
+          "owner": "Self"
+        }
+      ],
+      "worker_spots": [],
+      "route_modifier": null
+    },
+    {
+      "name": "Lens Grinder",
+      "quantity": 2,
+      "theme": "Mercury",
+      "cost": {
+        "vellum": 1,
+        "glass": 1,
+        "bronze": 1,
+        "mercury": 0
+      },
+      "vp": 2,
+      "build_rewards": [
+      ],
+      "triggered_rewards": [],
+      "worker_spots": [
+        {
+          "rewards": [
+            {
+              "kind": "ClaimInvention"
+            }
+          ],
+          "condition": "Two"
+        }
+      ],
+      "route_modifier": null
+    },
+    {
+      "name": "Distiller",
+      "quantity": 2,
+      "theme": "Mercury",
+      "cost": {
+        "vellum": 0,
+        "glass": 1,
+        "bronze": 2,
+        "mercury": 0
+      },
+      "vp": 2,
+      "build_rewards": [
+        {
+          "kind": "Gain",
+          "resource": "Mercury",
+          "amount": 1
+        }
+      ],
+      "triggered_rewards": [],
+      "worker_spots": [
+        {
+          "rewards": [
+            {
+              "kind": "Gain",
+              "resource": "Mercury",
+              "amount": 1,
+              "scaler": {
+                "source": "Dice",
+                "owner": "Self",
+                "factor": 1,
+                "max": 1,
+                "filter": {
+                  "pips": 2
+                }
+              }
+            }
+          ],
+          "condition": "Three"
+        }
+      ],
+      "route_modifier": "Mercury"
+    },
+    {
+      "name": "Pulley",
+      "quantity": 2,
+      "theme": "Glass",
+      "cost": {
+        "vellum": 1,
+        "glass": 0,
+        "bronze": 2,
+        "mercury": 0
+      },
+      "vp": 2,
+      "build_rewards": [
+        {
+          "kind": "Gain",
+          "resource": "Glass",
+          "amount": 1
+        }
+      ],
+      "triggered_rewards": [],
+      "worker_spots": [
+        {
+          "rewards": [
+            {
+              "kind": "UseSupplyMarket",
+              "resource": null,
+              "amount": 0
+            }
+          ],
+          "condition": "Four"
+        }
+      ],
+      "route_modifier": "Glass"
+    },
+    {
+      "name": "Thermometer",
+      "quantity": 2,
+      "theme": "Mercury",
+      "cost": {
+        "vellum": 1,
+        "glass": 0,
+        "bronze": 1,
+        "mercury": 0
+      },
+      "vp": 2,
+      "build_rewards": [],
+      "triggered_rewards": [
+        {
+          "kind": "Passive",
+          "rewards": [
+            {
+              "kind": "PlaceOnCard",
+              "resource": "Mercury",
+              "amount": 1
+            }
+          ],
+          "event": "PlacementCommissionLow",
+          "theme": "Mercury",
+          "owner": "Self"
+        }
+      ],
+      "worker_spots": [
+        {
+          "rewards": [
+            {
+              "kind": "ClaimFromCard",
+              "resource": null,
+              "amount": 0
+            }
+          ],
+          "condition": "One"
+        }
+      ],
+      "route_modifier": "Mercury"
+    },
+    {
+      "name": "Flask",
+      "quantity": 2,
+      "theme": "Mercury",
+      "cost": {
+        "vellum": 2,
+        "glass": 1,
+        "bronze": 0,
+        "mercury": 0
+      },
+      "vp": 2,
+      "build_rewards": [
+        {
+          "kind": "Reclaim",
+          "amount": 1
+        }
+      ],
+      "triggered_rewards": [
+        {
+          "kind": "Passive",
+          "rewards": [
+            {
+              "kind": "Gain",
+              "resource": "Bronze",
+              "amount": 1
+            }
+          ],
+          "event": "PlacementCommissionLow",
+          "theme": "Bronze",
+          "owner": "Self"
+        }
+      ],
+      "worker_spots": [
+      ],
+      "route_modifier": null
+    },
+    {
+      "name": "Prism",
+      "quantity": 2,
+      "theme": "Glass",
+      "cost": {
+        "vellum": 1,
+        "glass": 2,
+        "bronze": 0,
+        "mercury": 0
+      },
+      "vp": 3,
+      "build_rewards": [
+        {
+          "kind": "Gain",
+          "resource": "Glass",
+          "amount": 1
+        }
+      ],
+      "triggered_rewards": [
+        {
+          "kind": "Passive",
+          "rewards": [
+            {
+              "kind": "Gain",
+              "resource": "Glass",
+              "amount": 1,
+              "scaler": {
+                "source": "Dice",
+                "owner": "Self",
+                "factor": 1,
+                "max": 1,
+                "filter": {
+                  "pips": 5
+                }
+              }
+            }
+          ],
+          "event": "PlacementCommissionHigh",
+          "theme": "Any",
+          "owner": "Any"
+        }
+      ],
+      "worker_spots": [],
+      "route_modifier": null
+    },
+    {
+      "name": "Bellow",
+      "quantity": 2,
+      "theme": "Glass",
+      "cost": {
+        "vellum": 0,
+        "glass": 0,
+        "bronze": 3,
+        "mercury": 0
+      },
+      "vp": 1,
+      "build_rewards": [
+        {
+          "kind": "PlaceOnCard",
+          "resource": "Glass",
+          "amount": 4
+        }
+      ],
+      "triggered_rewards": [],
+      "worker_spots": [
+        {
+          "rewards": [
+            {
+              "kind": "ClaimFromCard",
+              "resource": null,
+              "amount": 0
+            }
+          ],
+          "condition": "Four"
+        }
+      ],
+      "route_modifier": "Glass"
+    },
+    {
+      "name": "Mirror",
+      "quantity": 2,
+      "theme": "Bronze",
+      "cost": {
+        "vellum": 0,
+        "glass": 2,
+        "bronze": 0,
+        "mercury": 0
+      },
+      "vp": 2,
+      "build_rewards": [
+      ],
+      "triggered_rewards": [
+        {
+          "kind": "Passive",
+          "rewards": [
+            {
+              "kind": "PlaceOnCard",
+              "resource": "Bronze",
+              "amount": 1
+            }
+          ],
+          "event": "PlacementCommissionHigh",
+          "theme": "Any",
+          "owner": "Any"
+        }
+      ],
+      "worker_spots": [
+        {
+          "rewards": [
+            {
+              "kind": "ClaimFromCard",
+              "resource": null,
+              "amount": 0
+            }
+          ],
+          "condition": "Five"
+        }
+      ],
+      "route_modifier": "Bronze"
+    },
+    {
+      "name": "Planet Model",
+      "unique": true,
+      "quantity": 2,
+      "theme": "Mercury",
+      "cost": {
+        "vellum": 2,
+        "glass": 2,
+        "bronze": 1,
+        "mercury": 0
+      },
+      "vp": 4,
+      "build_rewards": [],
+      "triggered_rewards": [
+        {
+          "kind": "Passive",
+          "rewards": [
+            {
+              "kind": "VP",
+              "resource": null,
+              "amount": 0,
+              "scaler": {
+                "source": "Dice",
+                "owner": "Self",
+                "factor": 1,
+                "max": 0,
+                "filter": {
+                  "pips": "Any"
+                }
+              }
+            }
+          ],
+          "event": "GameEnd",
+          "theme": null,
+          "owner": null
+        }
+      ],
+      "worker_spots": [],
+      "route_modifier": null
+    },
+    {
+      "name": "Book Cabinet",
+      "unique": true,
+      "quantity": 2,
+      "theme": "Vellum",
+      "cost": {
+        "vellum": 1,
+        "glass": 2,
+        "bronze": 1,
+        "mercury": 0
+      },
+      "vp": 4,
+      "build_rewards": [],
+      "triggered_rewards": [
+        {
+          "kind": "Passive",
+          "rewards": [
+            {
+              "kind": "VP",
+              "resource": null,
+              "amount": 0,
+              "scaler": {
+                "source": "Equipment",
+                "owner": "Self",
+                "factor": 1,
+                "max": 0,
+                "filter": {
+                  "theme": "Vellum"
+                }
+              }
+            }
+          ],
+          "event": "GameEnd",
+          "theme": null,
+          "owner": null
+        }
+      ],
+      "worker_spots": [],
+      "route_modifier": null
+    },
+    {
+      "name": "Crystal Sphere",
+      "unique": true,
+      "quantity": 2,
+      "theme": "Glass",
+      "cost": {
+        "vellum": 1,
+        "glass": 2,
+        "bronze": 1,
+        "mercury": 0
+      },
+      "vp": 4,
+      "build_rewards": [],
+      "triggered_rewards": [
+        {
+          "kind": "Passive",
+          "rewards": [
+            {
+              "kind": "VP",
+              "resource": null,
+              "amount": 0,
+              "scaler": {
+                "source": "Equipment",
+                "owner": "Self",
+                "factor": 1,
+                "max": 0,
+                "filter": {
+                  "theme": "Glass"
+                }
+              }
+            }
+          ],
+          "event": "GameEnd",
+          "theme": null,
+          "owner": null
+        }
+      ],
+      "worker_spots": [],
+      "route_modifier": null
+    },
+    {
+      "name": "Clockwork",
+      "unique": true,
+      "quantity": 2,
+      "theme": "Bronze",
+      "cost": {
+        "vellum": 0,
+        "glass": 2,
+        "bronze": 2,
+        "mercury": 0
+      },
+      "vp": 4,
+      "build_rewards": [],
+      "triggered_rewards": [
+        {
+          "kind": "Passive",
+          "rewards": [
+            {
+              "kind": "VP",
+              "resource": null,
+              "amount": 0,
+              "scaler": {
+                "source": "Equipment",
+                "owner": "Self",
+                "factor": 1,
+                "max": 0,
+                "filter": {
+                  "theme": "Bronze"
+                }
+              }
+            }
+          ],
+          "event": "GameEnd",
+          "theme": null,
+          "owner": null
+        }
+      ],
+      "worker_spots": [],
+      "route_modifier": null
+    },
+    {
+      "name": "Book Press",
+      "quantity": 2,
+      "theme": "Vellum",
+      "cost": {
+        "vellum": 2,
+        "glass": 0,
+        "bronze": 1,
+        "mercury": 0
+      },
+      "vp": 2,
+      "build_rewards": [],
+      "triggered_rewards": [],
+      "worker_spots": [
+        {
+          "rewards": [
+            {
+              "kind": "Gain",
+              "resource": "Glass",
+              "amount": 1
+            }
+          ],
+          "condition": "Six",
+          "capacity": 1
+        },
+        {
+          "rewards": [
+            {
+              "kind": "Gain",
+              "resource": "Vellum",
+              "amount": 1
+            }
+          ],
+          "condition": "Six",
+          "capacity": 1
+        }
+      ],
+      "route_modifier": null
+    }
+  ]
+}

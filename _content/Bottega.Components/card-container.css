@@ -1,0 +1,11 @@
+.bg-card-equipmentMarket {
+    display: grid;
+    grid-template-columns: repeat(6, var(--card-equipment-market-slot-width, 70mm));
+    align-content: start;
+    gap: .7rem 1rem;
+}
+
+.bg-card-equipment_market__slot {
+    min-width: 0;
+}
+

@@ -1,0 +1,10 @@
+.print-play { --sleeve-fit: 0; min-height: 100vh; padding: 1.25rem; background: #f3eedf; color: #29282b; font-family: Georgia, serif; }
+.print-play__loading { max-width: 70rem; margin: auto; }
+.print-complete .print-play { min-height: 0; padding: 0; background: transparent; }
+
+@page { size: A4 portrait; margin: 0; }
+@media print {
+    html, body { width: 210mm; margin: 0 !important; padding: 0 !important; background: white !important; }
+    .print-play { min-height: 0; padding: 0; background: white; }
+    .print-play__loading { display: none !important; }
+}

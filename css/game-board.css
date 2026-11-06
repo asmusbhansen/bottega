@@ -1,0 +1,70 @@
+.equipment-market-lab { --board-scale: .65; --board-width: calc((630mm + 8.8rem) * var(--board-scale)); --card-edge-inset: calc((.4rem + 3.25mm) * var(--board-scale)); box-sizing: border-box; display: flex; width: 100%; height: 100vh; height: 100dvh; max-width: 100%; min-width: 0; flex-direction: column; margin: 0 auto; padding: 0; overflow: hidden; color: #f5f3ec; }
+.equipment-market-lab__header { margin-bottom: 1.5rem; }.equipment-market-lab__header h1 { margin: .35rem 0; font-size: 2.2rem; font-weight: 400; }.equipment-market-lab__header p, .equipment-market-lab__status { color: #bbbcc2; }
+.equipment-market-lab__controls-viewport { flex: 0 0 calc(4rem * var(--board-scale)); height: calc(4rem * var(--board-scale)); width: var(--board-width); max-width: 100%; overflow: hidden; }
+.equipment-market-lab__controls { --choice-control-size: 3.2rem; --choice-resource-size: 1.6rem; --choice-stepper-font-size: 1.4rem; box-sizing: border-box; display: flex; height: 4rem; width: var(--board-natural-width, calc(630mm + 8.8rem)); min-width: 0; flex-wrap: nowrap; overflow-x: auto; align-items: center; gap: .6rem; padding: .2rem calc(.32rem + 2.6mm); border-bottom: 1px solid rgba(245, 243, 236, .22); font: 1.4rem/1.2 var(--font); transform: scale(var(--board-scale)); transform-origin: 0 0; }
+.equipment-market-lab__round { flex: 0 0 auto; margin: 0; color: #e3c38b; font-family: 'Trebuchet MS', sans-serif; font-weight: 700; }.equipment-market-lab__actions { display: flex; min-width: 0; flex: 0 1 auto; gap: .44rem; overflow-x: auto; }.equipment-market-lab__new-game { min-height: 3.2rem; padding: .36rem .72rem; white-space: nowrap; }.equipment-market-lab__status { min-width: 0; flex: 1 1 auto; margin: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.equipment-market-lab__new-game-group { display: flex; flex: 0 0 auto; align-items: center; gap: .3rem; margin-left: auto; }
+.equipment-market-lab__new-game-group .equipment-market-lab__new-game { margin-left: 0; }
+.equipment-market-lab__download-rulebook { display: inline-flex; flex: 0 0 auto; min-height: 3.2rem; align-items: center; justify-content: center; padding: .36rem .72rem; border: 1px solid rgba(227, 195, 139, .75); border-radius: 2px; background: #393237; color: #f5f3ec; font: inherit; text-decoration: none; white-space: nowrap; }
+.equipment-market-lab__download-rulebook:focus-visible { outline: 2px solid #f5f3ec; outline-offset: 3px; }
+.equipment-market-lab .equipment-market-lab__actions .equipment-market-lab__action-button, .equipment-market-lab .equipment-market-choice .equipment-market-lab__action-button { display: inline-flex; flex: 0 0 auto; min-height: 3.2rem; align-items: center; justify-content: center; padding: .36rem .72rem; border: 1px solid #e3c38b; border-radius: 2px; background: #4b4147; color: #f5f3ec; font: inherit; font-weight: 700; white-space: nowrap; cursor: pointer; touch-action: manipulation; }
+.equipment-market-lab .equipment-market-lab__actions .equipment-market-lab__action-button:not(:disabled), .equipment-market-lab .equipment-market-choice .equipment-market-lab__action-button:not(:disabled) { border-color: #e3c38b; background: #e3c38b; color: #292528; animation: available-action-pulse 1.4s ease-in-out infinite; }
+@keyframes available-action-pulse {
+	0%, 100% { background: #e3c38b; box-shadow: 0 0 0 2px #b68a4e; }
+	50% { background: #ffe0a3; box-shadow: 0 0 10px 3px #ffe0a3; }
+}
+@media (prefers-reduced-motion: reduce) {
+	.equipment-market-lab .equipment-market-lab__actions .equipment-market-lab__action-button:not(:disabled), .equipment-market-lab .equipment-market-choice .equipment-market-lab__action-button:not(:disabled) { background: #ffe0a3; box-shadow: 0 0 5px 2px #b68a4e; animation: none; }
+}
+.equipment-market-lab .equipment-market-lab__actions .equipment-market-lab__action-button:disabled, .equipment-market-lab .equipment-market-choice .equipment-market-lab__action-button:disabled { opacity: .55; cursor: default; }
+.equipment-market-action__parameter { display: inline-flex; flex: 0 0 auto; align-items: center; gap: .24rem; color: #bbbcc2; white-space: nowrap; }
+.equipment-market-action__parameter select { min-height: 3.2rem; min-width: 5.6rem; padding: .32rem 1.4rem .32rem .52rem; border: 1px solid rgba(245, 243, 236, .38); border-radius: 2px; background: #292528; color: #f5f3ec; font: inherit; }
+.equipment-market-lab__new-game { flex: 0 0 auto; margin-left: auto; border: 1px solid rgba(227, 195, 139, .75); border-radius: 2px; background: #393237; color: #f5f3ec; font: inherit; cursor: pointer; }
+.equipment-market-lab__new-game:hover { background: #4b4147; }
+.equipment-market-lab__new-game:focus-visible { outline: 2px solid #e3c38b; outline-offset: 2px; }
+.equipment-market-lab__action-log, .equipment-market-lab__legal-actions-section { box-sizing: border-box; grid-column: 1 / span 6; min-width: 0; padding: .2rem 0; color: #f5f3ec; font: .78rem var(--font); }
+.equipment-market-lab__legal-actions-section { grid-row: 6; }
+.equipment-market-lab__action-log { grid-row: 7; }
+.equipment-market-lab__action-log summary, .equipment-market-lab__legal-actions-section summary { width: fit-content; padding: .25rem 0; color: #e3c38b; cursor: pointer; }
+.equipment-market-lab__action-log ol { display: grid; gap: .15rem; margin: 0; padding: 0 0 .35rem 1.5rem; }
+.equipment-market-lab__action-log li { padding-left: .1rem; overflow-wrap: anywhere; }
+.equipment-market-lab__board { box-sizing: border-box; position: relative; width: 100%; min-width: 0; min-height: 0; flex: 1 1 auto; overflow-x: hidden; overflow-y: auto; scrollbar-gutter: stable; padding: 0; }
+.equipment-market-lab__slots { position: absolute; top: 0; left: max(0px, calc((100% - var(--board-width)) / 2)); display: grid; grid-template-columns: repeat(9, 70mm); grid-auto-rows: minmax(1.5rem, auto); align-items: start; gap: .7rem 1rem; width: max-content; padding: .4rem; transform: scale(var(--board-scale)); transform-origin: 0 0; }
+.equipment-market-lab__equipment-market-section { grid-column: 1 / -1; grid-row: 1; }
+.equipment-market-lab__invention-board { --tableau-stack-height: calc(var(--card-width) * 2.8 + 8px + .7rem); --commission-gap: calc((var(--tableau-stack-height) - 144mm - 6.32rem) / 3); grid-column: 7 / span 3; grid-row: 2 / span 4; align-self: center; display: grid; grid-template-columns: minmax(0, 1fr) max-content; align-items: start; gap: 1rem; min-width: 0; margin-inline: calc((70mm - 63.5mm) / 2); }
+.equipment-market-lab__right-rail { grid-column: 2; grid-row: 1; min-width: 0; }
+.equipment-market-lab__player-rail { grid-column: 1; grid-row: 1; display: flex; min-width: 0; flex-direction: column; gap: 2.5rem; }
+.equipment-market-lab__commissions-section, .equipment-market-lab__supply-market-section, .equipment-market-lab__player-status-section { max-width: 100%; min-width: 0; }
+.equipment-market-lab__commissions-section { width: 100%; }
+.equipment-market-lab__commissions-section .bg-all-commissions { flex-direction: column; flex-wrap: nowrap; align-items: center; gap: var(--commission-gap); }
+.equipment-market-lab__supply-market-section .bg-section__content, .equipment-market-lab__player-status-section .bg-section__content { box-sizing: border-box; max-width: 100%; }
+.equipment-market-lab__supply-market-section { width: 100%; max-width: none; }
+.equipment-market-lab__supply-market-section .bg-board-section--supplyMarkets { width: 100%; }
+.equipment-market-lab__supply-market-section .supply-market-row { display: flex; flex-direction: column; align-items: center; gap: 1rem; width: 100%; height: calc(72mm + 3.16rem + var(--commission-gap)); }
+.equipment-market-lab__supply-market-section .supply-market-spot { flex: 1 1 0; width: 100%; }
+.equipment-market-lab__commissions-section .bg-commission__label { flex: 0 0 auto; margin: 0 0 .5rem; color: #e3c38b; font: 700 .8rem/1.35 var(--font); text-align: left; }
+.equipment-market-lab__commissions-section .bg-commission__body { height: 36mm; }
+.equipment-market-lab__player-status-section .bg-section__content { box-sizing: border-box; max-width: 100%; }
+.equipment-market-lab__commissions-section .bg-section__heading, .equipment-market-lab__supply-market-section .bg-section__heading, .equipment-market-lab__player-status-section .bg-section__heading { text-align: center; }
+.equipment-market-lab__player-status-section .bg-player-status__inventions, .equipment-market-lab__player-status-section .bg-player-status__resources { justify-content: center; }
+.equipment-market-lab__pool-grid { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: center; gap: .75rem; }
+.equipment-market-lab__equipment-tableau { grid-column: 1 / span 5; grid-row: 2 / span 4; min-width: 0; }
+.equipment-market-lab__claimed-inventions-tableau { grid-column: 6 / span 1; grid-row: 2 / span 4; min-width: 0; }
+.equipment-market-lab__legal-actions-section { grid-column: 1 / span 6; grid-row: 6; min-width: 0; }
+.equipment-market-lab__asset { box-sizing: border-box; position: relative; min-width: 0; transition: opacity 160ms ease, filter 160ms ease, outline-color 160ms ease; }
+.equipment-market-lab__card-placement { display: flex; flex-direction: column; align-items: center; width: 70mm; }
+.equipment-market-lab__equipment, .equipment-market-lab__invention { width: 70mm; }
+.equipment-market-lab__card-container:not(.equipment-market-lab__card-container--empty) { width: var(--card-width); height: calc(var(--card-width) * 1.4064); border: 0; border-radius: calc(var(--card-width) * var(--card-radius-factor)); background: transparent; }
+.equipment-market-lab__asset--exiting { position: absolute; z-index: 10; visibility: hidden; pointer-events: none; }
+.equipment-market-lab__game-over { position: fixed; z-index: 100; inset: calc(4rem * var(--board-scale)) 0 0; display: grid; place-items: center; padding: 1rem; background: rgba(41, 37, 40, .94); }
+.equipment-market-lab__game-over-panel { width: min(100%, 30rem); padding: 1.5rem; border: 1px solid rgba(227, 195, 139, .55); background: #393237; color: #f5f3ec; font-family: var(--font); }
+.equipment-market-lab__game-over-panel h1 { margin: 0 0 .75rem; color: #e3c38b; font-size: 1.6rem; font-weight: 600; }
+.equipment-market-lab__final-total { margin: 0 0 1rem; font-size: 1.25rem; font-weight: 700; }
+.equipment-market-lab__game-over-panel dl { display: grid; gap: .45rem; margin: 0; }
+.equipment-market-lab__game-over-panel dl > div { display: flex; justify-content: space-between; gap: 1rem; }
+.equipment-market-lab__game-over-panel dt, .equipment-market-lab__game-over-panel dd { margin: 0; }
+.equipment-market-lab__die { z-index: 3; display: grid; width: 16mm; min-height: 16mm; place-items: center; border: 0; border-radius: 0; background: transparent; }
+.equipment-market-lab__die--on-card { align-self: end; justify-self: end; width: 16mm; min-height: 16mm; margin: 0 2mm 3mm 0; }
+.equipment-market-lab__equipment--equipmentMarket:hover .bg-card-container__frame { border-color: #e3c38b; background: #e3c38b; }
+.equipment-market-lab__empty { display: grid; width: 63.5mm; height: 88.9mm; place-items: center; border: 1px dashed rgba(245, 243, 236, .32); color: #bbbcc2; font: .75rem var(--font); }
+.equipment-market-lab, .equipment-market-lab button, .equipment-market-lab select { font-family: var(--font); }

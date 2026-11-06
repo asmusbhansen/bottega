@@ -1,0 +1,342 @@
+/* Bottega.Components shared styles.
+   Ported (with size-adaptive calc() scaling) from MigrationFiles/render_utils.py,
+   generate_cards_html.py and generate_board_html.py so the Blazor components match
+   the original static HTML generators for the unoccupied/empty visual state.
+   The only intentional visual deviation is SupplyMarketSpotComponent showing four
+   occupancy dice instead of one. */
+
+@font-face {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 200 900;
+  font-display: swap;
+  src: url("fonts/nunito-latin-wght-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Nunito";
+  font-style: italic;
+  font-weight: 200 900;
+  font-display: swap;
+  src: url("fonts/nunito-latin-wght-italic.woff2") format("woff2");
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+:root {
+  --paper: #f3eedf;
+  --ink: #29282b;
+  --border: #77756f;
+  --accent: #77756f;
+  --font: Nunito, "Segoe UI", sans-serif;
+  --card-width: 63.5mm; /* Fallback; CardSizing.DefaultWidth is the C# source of truth. */
+  --card-radius-factor: .032;
+  --slot-size: 30mm;
+  --supply-market-size: 40mm;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Resource badges (ported from render_utils.py resource_badge()/RESOURCE_META) */
+/* ---------------------------------------------------------------------- */
+
+.res-badge {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  width: var(--bs, 3mm);
+  height: var(--bs, 3mm);
+  border-radius: 50%;
+  background: transparent;
+  margin-block: 0.35mm;
+}
+.bg-symbol { display: block; width: 100%; height: 100%; flex: 0 0 auto; overflow: visible; }
+
+.bg-rewards { display: inline; }
+@keyframes selectable-bronze-pulse {
+  0%, 100% { outline-color: #b68a4e; }
+  50% { outline-color: #ffe0a3; }
+}
+@keyframes selectable-die-pulse {
+  0%, 100% { box-shadow: 0 0 0 3px #b68a4e; }
+  50% { box-shadow: 0 0 0 3px #ffe0a3; }
+}
+@keyframes selectable-card-pulse {
+  0%, 100% { outline-color: #b68a4e; box-shadow: 0 0 0 4.5px #b68a4e; }
+  50% { outline-color: #ffe0a3; box-shadow: 0 0 0 4.5px #ffe0a3; }
+}
+.asset-selection__asset { transition: opacity 160ms ease, filter 160ms ease, outline-color 160ms ease; }
+.asset-selection__asset.is-selectable { cursor: pointer; }
+.asset-selection__asset.is-idle-selectable {
+  outline: 2px solid #e3c38b;
+  outline-offset: 0;
+  animation: selectable-bronze-pulse 1.8s ease-in-out infinite;
+}
+.bg-trigger-row.asset-selection__asset.is-idle-selectable,
+.bg-trigger-row.asset-selection__asset.is-selected,
+.bg-trigger-row.asset-selection__asset:focus-visible { outline: 0; animation: none; }
+.bg-commission-slot.asset-selection__asset.is-idle-selectable,
+.supply-market-content-row.asset-selection__asset.is-idle-selectable { outline-width: 4px; }
+.bg-commission-slot.asset-selection__asset.is-selected,
+.supply-market-content-row.asset-selection__asset.is-selected { outline: 4px solid #e3c38b; outline-offset: 0; }
+.equipment-market-lab__die.asset-selection__asset.is-idle-selectable,
+.equipment-market-lab__die.asset-selection__asset.is-selected,
+.bg-worker-spot.asset-selection__asset.is-idle-selectable,
+.bg-worker-spot.asset-selection__asset.is-selected,
+.bg-spot-occupant.asset-selection__asset.is-idle-selectable,
+.bg-spot-occupant.asset-selection__asset.is-selected,
+.bg-card-occupancy.asset-selection__asset.is-idle-selectable,
+.bg-card-occupancy.asset-selection__asset.is-selected,
+.supply-market-occupant.asset-selection__asset.is-idle-selectable,
+.supply-market-occupant.asset-selection__asset.is-selected,
+.occupied-slot.asset-selection__asset.is-idle-selectable,
+.occupied-slot.asset-selection__asset.is-selected { outline: 0; animation: none; }
+.equipment-market-lab__die.asset-selection__asset.is-idle-selectable .dice,
+.bg-spot-occupant.asset-selection__asset.is-idle-selectable .dice,
+.bg-card-occupancy.asset-selection__asset.is-idle-selectable .dice,
+.supply-market-occupant.asset-selection__asset.is-idle-selectable .dice,
+.occupied-slot.asset-selection__asset.is-idle-selectable .dice {
+  animation: selectable-die-pulse 1.4s ease-in-out infinite;
+}
+.equipment-market-lab__die.asset-selection__asset.is-selected .dice,
+.bg-spot-occupant.asset-selection__asset.is-selected .dice,
+.bg-card-occupancy.asset-selection__asset.is-selected .dice,
+.supply-market-occupant.asset-selection__asset.is-selected .dice,
+.occupied-slot.asset-selection__asset.is-selected .dice {
+  box-shadow: 0 0 0 3px #e3c38b;
+}
+.bg-card-occupancy.asset-selection__asset.is-selected .dice:not(.occupied) {
+  --die-fill: color-mix(in srgb, var(--owner-color, #29282b) 60%, transparent);
+}
+.bg-commission-slot.asset-selection__asset:focus-visible,
+.supply-market-spot:focus-visible { outline: none; }
+.supply-market-spot:focus-visible .supply-market-content-row { outline: 4px solid #e3c38b; outline-offset: 0; animation: none; }
+.equipment-market-lab__die.asset-selection__asset:focus-visible,
+.bg-worker-spot.asset-selection__asset:focus-visible,
+.bg-spot-occupant.asset-selection__asset:focus-visible,
+.bg-card-occupancy.asset-selection__asset:focus-visible,
+.supply-market-occupant.asset-selection__asset:focus-visible,
+.occupied-slot.asset-selection__asset:focus-visible { outline: 0; }
+.equipment-market-lab__die.asset-selection__asset:focus-visible .dice,
+.bg-spot-occupant.asset-selection__asset:focus-visible .dice,
+.bg-card-occupancy.asset-selection__asset:focus-visible .dice,
+.supply-market-occupant.asset-selection__asset:focus-visible .dice,
+.occupied-slot.asset-selection__asset:focus-visible .dice { box-shadow: 0 0 0 3px #e3c38b; animation: none; }
+.bg-card-container__frame.asset-selection__asset.is-idle-selectable {
+  outline: 0;
+  animation: none;
+  border-color: transparent;
+}
+.bg-card-container__frame.asset-selection__asset.is-idle-selectable .bg-card {
+  outline: 4.5px solid #b68a4e;
+  outline-offset: 0;
+  animation: selectable-card-pulse 1.4s ease-in-out infinite;
+}
+.bg-card-container__frame.asset-selection__asset.is-selected {
+  outline: 0;
+  border-color: transparent;
+}
+.bg-card-container__frame.asset-selection__asset.is-selected .bg-card {
+  outline: 4.5px solid #e3c38b;
+  outline-offset: 0;
+  box-shadow: 0 0 0 4.5px #e3c38b;
+}
+.asset-selection__asset.is-faded { opacity: .2; }
+.asset-selection__asset.is-unavailable { opacity: .6; }
+.asset-selection__asset.is-selected { z-index: 5; outline: 2px solid #e3c38b; outline-offset: 0; }
+.asset-selection__asset:focus-visible { outline: 3px solid #e3c38b; outline-offset: 0; animation: none; }
+.bg-card-container__frame.asset-selection__asset:focus-visible { outline: 0; }
+.bg-card-container__frame.asset-selection__asset:focus-visible .bg-card { outline: 4.5px solid #e3c38b; outline-offset: 0; box-shadow: 0 0 0 4.5px #e3c38b; animation: none; }
+@media (prefers-reduced-motion: reduce) {
+  .asset-selection__asset.is-idle-selectable { animation: none; }
+  .equipment-market-lab__die.asset-selection__asset.is-idle-selectable .dice,
+  .bg-spot-occupant.asset-selection__asset.is-idle-selectable .dice,
+  .bg-card-occupancy.asset-selection__asset.is-idle-selectable .dice,
+  .supply-market-occupant.asset-selection__asset.is-idle-selectable .dice,
+  .occupied-slot.asset-selection__asset.is-idle-selectable .dice { animation: none; box-shadow: 0 0 0 3px #b68a4e; }
+  .bg-card-container__frame.asset-selection__asset.is-idle-selectable .bg-card { box-shadow: 0 0 0 4.5px #b68a4e; animation: none; }
+}
+.bg-rewards-commissionslot { display: flex; flex-direction: column; align-items: center; gap: calc(var(--slot-size) * .02); }
+.bg-rewards-commissionslot > span { display: contents; }
+.bg-rewards-commissionslot .slot-gain,
+.bg-rewards-commissionslot .slot-invention,
+.bg-rewards-commissionslot .slot-discount,
+.bg-rewards-commissionslot .slot-trade,
+.bg-rewards-commissionslot .slot-misc { display: flex; align-items: center; justify-content: center; white-space: nowrap; }
+.bg-rewards-card, .bg-rewards-invention { line-height: 1.35; }
+
+.bg-invention-card { background: #ece3f4; }
+.bg-invention-req { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: calc(var(--card-width) * .0064); }
+.bg-invention-req-main, .bg-invention-req-alternative { display: inline-flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: calc(var(--card-width) * .0128); }
+.bg-invention-req-alternative { flex: 0 0 100%; display: flex; align-items: center; justify-content: center; gap: calc(var(--card-width) * .0192); }
+.bg-invention-req-or { margin: 0; color: inherit; font-family: inherit; font-size: inherit; font-weight: 400; }
+.bg-invention-req .res-badge { --bs: calc(var(--card-width) * .061824); }
+.dice.bg-predicate-die { --ds: calc(var(--card-width) * .0755904); }
+.bg-predicate-symbol { position: relative; display: inline-flex; flex: 0 0 auto; align-items: center; justify-content: center; width: calc(var(--card-width) * .0792); height: calc(var(--card-width) * .0792); color: var(--ink); vertical-align: middle; }
+.bg-predicate-and { font-size: .75em; font-weight: 400; }
+.bg-predicate-worker, .bg-predicate-card { display: inline-block; flex: 0 0 auto; width: calc(var(--card-width) * .0624); height: calc(var(--card-width) * .0624); border: calc(var(--card-width) * .00384) solid currentColor; vertical-align: middle; }
+.bg-predicate-worker { border-radius: 50%; background: radial-gradient(circle at center, currentColor 0 18%, transparent 20%); }
+.bg-predicate-card { border-radius: calc(var(--card-width) * .004); background: linear-gradient(135deg, transparent 0 42%, currentColor 44% 48%, transparent 50%); }
+.bg-invention-symbol { display: inline-block; width: calc(var(--card-width) * .0552); height: calc(var(--card-width) * .07728); margin-block: calc(var(--card-width) * .00672); vertical-align: middle; }
+
+
+/* ---------------------------------------------------------------------- */
+/* Occupancy dice (ported from render_utils.py dice_face()/dice_face_text()) */
+/* ---------------------------------------------------------------------- */
+
+.dice { --ds: 6mm; --die-fill: var(--paper, #f3eedf); --die-pip: var(--ink, #29282b); display: inline-flex; flex: 0 0 auto; width: var(--ds); height: var(--ds); border-radius: calc(var(--ds) * .19); vertical-align: middle; }
+.dice.occupied { --die-fill: var(--owner-color, #29282b); --die-pip: #fff; }
+.dice.blocked { --die-fill: var(--owner-color, #626267); }
+.bg-symbol-inline { display: inline-flex; width: 1em; height: 1em; flex: 0 0 auto; vertical-align: middle; }
+
+/* ---------------------------------------------------------------------- */
+/* Card (ported from generate_cards_html.py render_card()/_card_css())     */
+/* Classes are prefixed "bg-" to avoid colliding with Bootstrap's own      */
+/* .card/.card-header/.card-body/.card-footer rules loaded by the host.   */
+/* ---------------------------------------------------------------------- */
+
+.bg-card {
+  position: relative;
+  isolation: isolate;
+  --card-section-divider: calc(var(--card-width) * .0048) solid var(--border);
+  --card-item-divider: calc(var(--card-width) * .0032) dashed var(--border);
+  --art-tint: #e7e2d6;
+  --name-bg: var(--border);
+  width: var(--card-width);
+  height: calc(var(--card-width) * 1.4);
+  display: flex;
+  flex-direction: column;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: calc(var(--card-width) * .0384);
+  border: calc(var(--card-width) * .004) solid var(--border);
+  border-radius: calc(var(--card-width) * var(--card-radius-factor));
+  padding: calc(var(--card-width) * .0352) calc(var(--card-width) * .0384);
+  overflow: hidden;
+}
+.bg-card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: calc(var(--card-width) * .016); }
+.bg-cost-row { display: flex; flex-direction: row; align-items: flex-start; }
+.display-resources { --display-resources-size: 3mm; display: inline-flex; align-items: center; gap: calc(var(--display-resources-size) * .725); white-space: nowrap; }
+.display-resources__item { display: inline-flex; align-items: center; gap: calc(var(--display-resources-size) * .116); line-height: 1; }
+.display-resources .res-badge { --bs: var(--display-resources-size); }
+.display-resources__count { display: inline-flex; align-items: center; height: var(--display-resources-size); font-size: var(--display-resources-size); line-height: 1; }
+.display-resources__count.is-bold { font-weight: 700; }
+.claim-stored-resources { display: inline-block; white-space: nowrap; }
+.bg-card-header .display-resources { --display-resources-size: calc(var(--card-width) * .0552); }
+.bg-rewards-card .display-resources { --display-resources-size: calc(var(--card-width) * .061824); }
+.bg-rewards-invention .display-resources, .bg-invention-req .display-resources { --display-resources-size: calc(var(--card-width) * .061824); }
+.bg-slot-rewards .display-resources { --display-resources-size: calc(var(--slot-size) * .1333); }
+.bg-cost-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); align-content: start; width: calc(var(--card-width) * .48); }
+.bg-cost-slot { display: inline-flex; align-items: center; justify-content: center; gap: calc(var(--card-width) * .008); min-width: 0; font-size: calc(var(--card-width) * .0677333); font-weight: 700; }
+.bg-cost-slot .res-badge, .bg-cost-item .res-badge { --bs: calc(var(--card-width) * .0552); }
+.bg-cost-slot.is-zero { visibility: hidden; }
+.bg-cost-item { display: inline-flex; align-items: center; font-size: calc(var(--card-width) * .0552); line-height: 1; font-weight: 700; }
+
+.bg-card-name {
+  flex: 0 0 auto;
+  text-align: center;
+  margin: calc(var(--card-width) * .0128) calc(var(--card-width) * -.0384) calc(var(--card-width) * .016);
+  padding: calc(var(--card-width) * .0192) calc(var(--card-width) * .0384);
+  background: var(--name-bg);
+  color: var(--name-ink, var(--paper));
+  font-weight: 700;
+  font-size: calc(var(--card-width) * .0677333);
+  line-height: 1.15;
+}
+
+.bg-card-art {
+  position: relative;
+  flex: 0 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(var(--card-width) * .352);
+  min-height: calc(var(--card-width) * .12);
+  background: var(--art-tint);
+  border-radius: calc(var(--card-width) * var(--card-radius-factor));
+  margin-bottom: calc(var(--card-width) * .016);
+}
+
+.bg-card-art-type {
+  position: absolute;
+  top: calc(var(--card-width) * .016);
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: calc(var(--card-width) * .046);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.bg-card-body {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  border-top: var(--card-section-divider);
+  padding-top: calc(var(--card-width) * .016);
+  overflow: hidden;
+  min-height: 0;
+}
+
+.bg-card-footer {
+  flex: 0 0 auto;
+  margin-top: auto;
+  min-height: calc(var(--card-width) * .064);
+  padding: calc(var(--card-width) * .0128) calc(var(--card-width) * .0256);
+  font-size: calc(var(--card-width) * .0352);
+  font-style: italic;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: calc(var(--card-width) * .0128);
+  color: var(--ink);
+  text-align: center;
+}
+.bg-card-footer.has-route {
+  padding-top: calc(var(--card-width) * .0096);
+  border-top: var(--card-section-divider);
+}
+.bg-route { display: inline-flex; align-items: center; justify-content: center; gap: calc(var(--card-width) * .0128); font-size: calc(var(--card-width) * .056444); font-weight: 400; font-style: normal; white-space: nowrap; }
+.bg-route .res-badge { --bs: calc(var(--card-width) * .04784); }
+.bg-route.bg-route--inline { --route-die-size: 1em; display: inline; font: inherit; white-space: normal; }
+.bg-route--inline > span { margin-right: .15em; }
+.bg-route--inline > span:last-child { margin-right: 0; }
+.bg-route--inline .dice, .bg-route--inline .res-badge { vertical-align: middle; }
+.bg-route--inline .dice { display: inline-block; overflow: hidden; }
+.bg-route--inline .res-badge { --bs: 1em; }
+
+/* ---------------------------------------------------------------------- */
+/* Commission slot (ported from generate_board_html.py render_slot()/_slot_css()) */
+/* ---------------------------------------------------------------------- */
+
+.slot-gain, .slot-invention, .slot-discount, .slot-trade, .slot-spacer {
+  display: flex; align-items: center; justify-content: center;
+  gap: calc(var(--slot-size) * .01667);
+  height: calc(var(--slot-size) * .1333);
+  white-space: nowrap;
+}
+.slot-invention { font-size: calc(var(--slot-size) * .0733); font-weight: 600; text-transform: uppercase; letter-spacing: .2mm; color: #77756f; }
+.slot-discount { font-size: calc(var(--slot-size) * .0867); color: #77756f; }
+.slot-discount-label { font-size: calc(var(--slot-size) * .0733); font-weight: 600; margin-left: calc(var(--slot-size) * .01333); text-transform: uppercase; letter-spacing: .2mm; }
+.bg-rewards-commissionslot .slot-invention,
+.bg-rewards-commissionslot .slot-discount-label { font-family: inherit; font-size: calc(var(--slot-size) * .09); font-weight: 400; text-transform: none; letter-spacing: normal; color: #77756f; }
+.slot-trade { font-size: calc(var(--slot-size) * .0933); color: #77756f; font-weight: 600; }
+.slot-trade-arrow { font-size: calc(var(--slot-size) * .08); margin: 0 calc(var(--slot-size) * .00667); }
+.slot-misc { font-size: calc(var(--slot-size) * .0667); font-weight: 600; text-align: center; line-height: 1.1; }
+.invention-symbol {
+  display: inline-block;
+  width: calc(var(--slot-size) * .0833);
+  height: calc(var(--slot-size) * .1167);
+  vertical-align: middle;
+  margin-block: calc(var(--slot-size) * .01167);
+}
+
+/* ---------------------------------------------------------------------- */
+/* SupplyMarket spot (ported from generate_board_html.py render_supply_market_spot()/_supply_market_css()) */
+/* NOTE: pips row intentionally renders 4 dice instead of 1 (see Sub-Prompt Q). */
+/* ---------------------------------------------------------------------- */
+
+.bg-requirement-die { display: inline-grid; place-items: center; }
+

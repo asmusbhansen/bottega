@@ -1,0 +1,256 @@
+@import '_content/Bottega.Components/Bottega.Components.k9yxk0e5w6.bundle.scp.css';
+
+/* /../../tools/Bottega.Components.Playground/ActionConfirmationPopup.razor.rz.scp.css */
+.equipment-market-lab__confirmation[b-rt2v4j8wo2] { z-index: 110; inset: 0; background: rgba(41, 37, 40, .72); }
+.equipment-market-lab__confirmation-panel[b-rt2v4j8wo2] { width: min(100%, 24rem); border-radius: 4px; }
+.equipment-market-lab__confirmation-panel h2[b-rt2v4j8wo2] { margin: 0 0 .75rem; color: #e3c38b; font-size: 1.15rem; }
+.equipment-market-lab__confirmation-panel p[b-rt2v4j8wo2] { margin: 0 0 1.25rem; }
+.equipment-market-lab__confirmation-actions[b-rt2v4j8wo2] { display: flex; justify-content: flex-end; gap: .75rem; }
+.equipment-market-lab__confirmation-actions button[b-rt2v4j8wo2] { min-height: 2rem; padding: .3rem .8rem; border: 1px solid rgba(227, 195, 139, .75); border-radius: 2px; background: #393237; color: #f5f3ec; font: inherit; cursor: pointer; }
+.equipment-market-lab__confirmation-actions button:focus-visible[b-rt2v4j8wo2] { outline: 2px solid #e3c38b; outline-offset: 3px; }
+.equipment-market-lab__confirmation-confirm[b-rt2v4j8wo2] { background: #4b4147 !important; }
+/* /../../tools/Bottega.Components.Playground/DownloadsPopup.razor.rz.scp.css */
+.downloads-popup[b-bxbypn1vim] { position: fixed; inset: 0; z-index: 200; display: grid; place-items: center; padding: 1rem; background: #0009; font-family: var(--font, 'Trebuchet MS', sans-serif); }
+.downloads-popup__panel[b-bxbypn1vim] { box-sizing: border-box; width: min(100%, 28rem); max-height: 90dvh; overflow: auto; padding: 1.25rem; border: 1px solid #e3c38b; border-radius: 2px; background: #393237; color: #f5f3ec; }
+.downloads-popup h2[b-bxbypn1vim] { margin: 0 0 1rem; font-size: 1.4rem; color: #e3c38b; }
+.downloads-popup__option[b-bxbypn1vim] { display: flex; align-items: center; gap: .75rem; margin: .75rem 0; }
+.downloads-popup select[b-bxbypn1vim] { padding: .4rem; background: #292528; color: #f5f3ec; border: 1px solid #e3c38b; font: inherit; }
+.downloads-popup p[b-bxbypn1vim] { font-size: .95rem; line-height: 1.4; }
+.downloads-popup__actions[b-bxbypn1vim] { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: .75rem; margin-top: 1.25rem; }
+.downloads-popup__actions button[b-bxbypn1vim], .downloads-popup__actions a[b-bxbypn1vim] { display: inline-flex; align-items: center; min-height: 2.5rem; padding: .4rem .75rem; border: 1px solid #e3c38b; border-radius: 2px; background: #4b4147; color: #f5f3ec; font: inherit; text-decoration: none; }
+.downloads-popup__actions a[b-bxbypn1vim] { background: #e3c38b; color: #292528; }
+.downloads-popup :focus-visible[b-bxbypn1vim] { outline: 2px solid white; outline-offset: 3px; }
+/* /../../tools/Bottega.Components.Playground/InventionFulfillmentPopup.razor.rz.scp.css */
+.equipment-market-lab__fulfilled-invention-panel[b-8oxcnk7pkm] { text-align: center; }
+.equipment-market-lab__fulfilled-invention-card[b-8oxcnk7pkm] { display: flex; justify-content: center; margin-top: 1rem; }
+.equipment-market-lab__continue-fulfillment[b-8oxcnk7pkm] { display: block; min-width: 10rem; margin: 1rem auto 0; }
+/* /../../tools/Bottega.Components.Playground/TutorialPopup.razor.rz.scp.css */
+.tutorial-popup-overlay[b-h0meceosch] {
+    position: absolute;
+    z-index: 105;
+    grid-column: 3 / span 3;
+    grid-row: 1 / span 2;
+    inset: 0;
+    pointer-events: none;
+}
+
+.tutorial-popup[b-h0meceosch] {
+    box-sizing: border-box;
+    display: grid;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    grid-template-rows: 2.25rem minmax(0, 1fr) 10rem;
+    gap: .75rem;
+    padding: 1rem 1.25rem;
+    border: 1px solid rgba(227, 195, 139, .65);
+    background: #393237;
+    color: #f5f3ec;
+    font-family: var(--font);
+    pointer-events: auto;
+}
+
+.tutorial-popup h2[b-h0meceosch] {
+    margin: 0;
+    color: #e3c38b;
+    font-size: 1.6rem;
+    font-weight: 600;
+    text-align: center;
+    align-self: center;
+}
+
+.tutorial-popup p[b-h0meceosch] {
+    margin: 0;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+.tutorial-popup__prompt[b-h0meceosch] {
+    color: #e3c38b;
+    font-weight: 600;
+    animation: tutorial-prompt-pulse-b-h0meceosch 1.4s ease-in-out infinite;
+}
+
+@keyframes tutorial-prompt-pulse-b-h0meceosch {
+    0%, 100% {
+        color: #e3c38b;
+        text-shadow: 0 0 4px #b68a4e;
+    }
+
+    50% {
+        color: #ffe0a3;
+        text-shadow: 0 0 9px #ffe0a3;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .tutorial-popup__prompt[b-h0meceosch] {
+        animation: none;
+        color: #ffe0a3;
+        text-shadow: 0 0 5px #b68a4e;
+    }
+}
+
+.tutorial-popup__finished-details[b-h0meceosch] {
+    min-height: 0;
+    padding: .25rem;
+    overflow-y: auto;
+    font-size: 1.15rem;
+    line-height: 1.45;
+}
+
+.tutorial-popup__finished-details p[b-h0meceosch] {
+    margin-bottom: .35rem;
+    font-size: inherit;
+    line-height: inherit;
+    text-align: left;
+}
+
+.tutorial-popup__finished-details ul[b-h0meceosch] {
+    display: grid;
+    gap: .4rem;
+    margin: 0;
+    padding-left: 1.2rem;
+}
+
+.tutorial-popup__footer[b-h0meceosch] {
+    display: grid;
+    grid-template-rows: 3.75rem 2.5rem 2.75rem;
+    grid-template-columns: minmax(0, 1fr);
+    gap: .5rem;
+    width: min(100%, 32rem);
+    justify-self: center;
+    justify-items: center;
+    align-items: center;
+}
+
+.tutorial-popup button[b-h0meceosch] {
+    min-height: 2.75rem;
+    padding: .65rem 1rem;
+    border: 1px solid #e3c38b;
+    border-radius: 2px;
+    background: #e3c38b;
+    color: #292528;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.tutorial-popup .tutorial-popup__new-game[b-h0meceosch],
+.tutorial-popup .tutorial-popup__primary-action[b-h0meceosch] {
+    width: min(100%, 20rem);
+    height: 2.75rem;
+    padding: .25rem .5rem;
+}
+
+.tutorial-popup__new-game[b-h0meceosch] {
+    grid-row: 3;
+}
+
+.tutorial-popup__rulebook-download[b-h0meceosch] {
+    grid-row: 2;
+    align-self: center;
+    color: #e3c38b;
+    font-size: .95rem;
+    text-underline-offset: .15em;
+}
+
+.tutorial-popup__rulebook-download a[b-h0meceosch] { color: inherit; }
+
+.tutorial-popup__primary-action[b-h0meceosch] {
+    grid-row: 1;
+    align-self: end;
+}
+
+.tutorial-popup button:focus-visible[b-h0meceosch],
+.tutorial-popup a:focus-visible[b-h0meceosch] {
+    outline: 2px solid #f5f3ec;
+    outline-offset: 3px;
+}
+
+.tutorial-popup__instruction[b-h0meceosch] {
+    display: grid;
+    align-content: start;
+    justify-items: center;
+    gap: 1cm;
+    min-height: 0;
+    overflow-y: auto;
+    text-align: center;
+    scrollbar-gutter: stable both-edges;
+    font-size: 1.4rem;
+    line-height: 1.5;
+}
+
+.tutorial-popup__explanation[b-h0meceosch] {
+    display: grid;
+    align-content: start;
+    justify-items: center;
+    gap: .75rem;
+    width: 100%;
+    min-width: 0;
+}
+
+.tutorial-popup .tutorial-popup__effect[b-h0meceosch] {
+    max-width: 32rem;
+    font-size: 1.15rem;
+    line-height: 1.45;
+}
+
+.tutorial-popup__effect p + p[b-h0meceosch],
+.tutorial-popup__effect ul[b-h0meceosch] {
+    margin-top: .75rem;
+}
+
+.tutorial-popup__effect ul[b-h0meceosch] {
+    display: grid;
+    gap: .35rem;
+    padding-left: 1.25rem;
+    text-align: left;
+}
+
+.tutorial-popup__effect-resource[b-h0meceosch] {
+    display: inline-flex;
+    align-items: center;
+    gap: .2rem;
+    margin-inline: .2rem;
+    white-space: nowrap;
+}
+
+.tutorial-popup__effect .res-badge[b-h0meceosch] {
+    --bs: 1em;
+    vertical-align: middle;
+}
+
+.tutorial-popup .tutorial-popup__action-hint[b-h0meceosch] {
+    font-size: .95rem;
+    line-height: 1.25;
+    text-align: center;
+}
+
+.tutorial-popup__welcome-details[b-h0meceosch] {
+    display: grid;
+    min-height: 0;
+    place-items: center;
+    padding: .5rem 1rem;
+    overflow-y: auto;
+}
+
+.tutorial-popup__welcome-details p[b-h0meceosch] {
+    max-width: 42rem;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.tutorial-popup .tutorial-popup__new-game--secondary[b-h0meceosch] {
+    border-color: rgba(227, 195, 139, .75);
+    background: #4b4147;
+    color: #f5f3ec;
+}
+
+.tutorial-popup .tutorial-popup__new-game--complete[b-h0meceosch] {
+    border-color: #ffe0a3;
+    background: #e3c38b;
+    color: #292528;
+    box-shadow: 0 0 0 1px #b68a4e;
+}

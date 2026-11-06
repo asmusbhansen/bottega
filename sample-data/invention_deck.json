@@ -1,0 +1,25 @@
+{
+  "decks": [
+    {
+      "name": "1 VP",
+      "min_vp": 1,
+      "max_vp": 1,
+      "face_up_count": 1,
+      "private_draw_count": 1
+    },
+    {
+      "name": "2 VP",
+      "min_vp": 2,
+      "max_vp": 2,
+      "face_up_count": 1,
+      "private_draw_count": 1
+    },
+    {
+      "name": "3-4 VP",
+      "min_vp": 3,
+      "max_vp": 4,
+      "face_up_count": 1,
+      "private_draw_count": 1
+    }
+  ]
+}

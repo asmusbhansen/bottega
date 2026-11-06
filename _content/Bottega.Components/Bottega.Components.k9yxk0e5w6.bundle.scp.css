@@ -1,0 +1,539 @@
+/* _content/Bottega.Components/AllCommissions.razor.rz.scp.css */
+:where(.bg-all-commissions)[b-bhpte0s9w3] {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 1rem;
+}
+/* _content/Bottega.Components/CardComponent.razor.rz.scp.css */
+:where(.bg-card--independent-surfaces)[b-z4975zfc8q] {
+  background: color-mix(in srgb, var(--paper) calc(var(--shell-opacity) * 100%), var(--card-backdrop, #292528));
+  border-color: color-mix(in srgb, var(--border) calc(var(--shell-opacity) * 100%), var(--card-backdrop, #292528));
+}
+
+:where(.bg-card--independent-surfaces) .bg-card-art[b-z4975zfc8q] {
+  background: color-mix(in srgb, var(--art-tint) calc(var(--shell-opacity) * 100%), var(--card-backdrop, #292528));
+}
+:where(.bg-card--independent-surfaces) .bg-ability-table[b-z4975zfc8q],
+:where(.bg-card--independent-surfaces) .bg-ability-table > tbody[b-z4975zfc8q] {
+  display: block;
+}
+:where(.bg-card--independent-surfaces) .bg-ability-table tr[b-z4975zfc8q] {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) calc(var(--card-width) * .088) minmax(0, 1fr);
+}
+:where(.bg-card--independent-surfaces) .bg-ability-table td[b-z4975zfc8q] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  min-width: 0;
+}
+:where(.bg-card--independent-surfaces) .bg-ability-table td[colspan][b-z4975zfc8q] {
+  grid-column: 1 / -1;
+}
+:where(.bg-card--independent-surfaces) .bg-trigger-row[b-z4975zfc8q] {
+  background-color: color-mix(in srgb, var(--paper) calc(var(--row-opacity) * 100%), var(--card-backdrop, #292528));
+}
+
+:where(.bg-cost-free)[b-z4975zfc8q] { font-size: calc(var(--card-width) * .0416); font-weight: 600; font-style: italic; color: #77756f; }
+:where(.bg-ability-wrap)[b-z4975zfc8q] { flex: 1 1 auto; display: flex; align-items: center; justify-content: center; min-height: 0; }
+:where(.bg-ability-table)[b-z4975zfc8q] { width: calc(var(--card-width) * .888); table-layout: fixed; border-collapse: collapse; font-size: calc(var(--card-width) * .0677328); }
+:where(.bg-ability-table) tr + tr > td[b-z4975zfc8q] { border-top: var(--card-item-divider); }
+:where(.bg-ability-table) td[b-z4975zfc8q] { padding: calc(var(--card-width) * .0128) calc(var(--card-width) * .0096); vertical-align: middle; text-align: center; overflow-wrap: break-word; }
+:where(.bg-act-cell)[b-z4975zfc8q], :where(.bg-rew-cell)[b-z4975zfc8q] { width: calc(var(--card-width) * .4); font-weight: 400; line-height: 1.35; }
+:where(.bg-act-cell)[b-z4975zfc8q] { border-radius: calc(var(--card-width) * .016); }
+:where(.bg-arrow-cell)[b-z4975zfc8q] { width: calc(var(--card-width) * .088); font-size: calc(var(--card-width) * .06912); font-weight: 700; text-align: center; color: var(--accent); }
+:where(.bg-empty-note)[b-z4975zfc8q] { text-align: center; font-style: italic; color: #77756f; font-size: calc(var(--card-width) * .0384); }
+:where(.bg-trigger-description)[b-z4975zfc8q] { display: block; }
+/* _content/Bottega.Components/CardContainer.razor.rz.scp.css */
+.bg-card-container[b-fjyytp1x4x] {
+    display: grid;
+    gap: .2rem;
+    width: fit-content;
+}
+
+.bg-card-container__caption[b-fjyytp1x4x] {
+    display: grid;
+    box-sizing: border-box;
+    min-width: 0;
+    min-height: 1.5rem;
+    width: calc(var(--card-width) + 4px);
+    place-items: center;
+    color: #e3c38b;
+    font: 700 .7rem 'Trebuchet MS', sans-serif;
+    text-align: center;
+}
+
+:where(.bg-card-container__frame)[b-fjyytp1x4x] {
+    box-sizing: border-box;
+    display: grid;
+    width: calc(var(--card-width) + 4px);
+    height: calc(var(--card-width) * 1.4 + 4px);
+    margin-inline: auto;
+    padding: 0;
+    place-items: center;
+    border: 2px solid rgba(245, 243, 236, .24);
+    border-radius: calc(var(--card-width) * var(--card-radius-factor) + 2px);
+    background: rgba(245, 243, 236, .035);
+}
+
+.bg-card-container__empty-text[b-fjyytp1x4x] {
+    display: grid;
+    width: 100%;
+    min-height: 100%;
+    place-items: center;
+    color: #bbbcc2;
+    font: .75rem 'Trebuchet MS', sans-serif;
+    text-align: center;
+}
+/* _content/Bottega.Components/ClaimCandidateComponent.razor.rz.scp.css */
+.bg-claim-candidates[b-yoreu9i8va] {
+    display: grid;
+    grid-template-columns: repeat(2, var(--card-equipment-market-slot-width, 70mm));
+    align-content: start;
+    gap: .7rem 1rem;
+}
+
+.bg-claim-candidates__card[b-yoreu9i8va] {
+    min-width: 0;
+}
+/* _content/Bottega.Components/CommissionComponent.razor.rz.scp.css */
+:where(.bg-commission)[b-g8266qeajj] {
+  min-width: 0;
+}
+
+:where(.bg-commission__label)[b-g8266qeajj] {
+  margin: 0 0 .5rem;
+  color: #e7e2d6;
+  font: 700 .8rem var(--font, 'Trebuchet MS', sans-serif);
+}
+
+:where(.bg-commission__body)[b-g8266qeajj] {
+  display: flex;
+  gap: calc(var(--slot-size) * .08);
+  width: max-content;
+  padding: calc(var(--slot-size) * .1);
+  border-radius: calc(var(--card-width) * var(--card-radius-factor));
+  background: color-mix(in srgb, var(--commission-resource-color, #999) calc(var(--commission-opacity, 1) * 100%), var(--card-backdrop, #292528));
+}
+/* _content/Bottega.Components/CommissionsAndSupplyMarketComponent.razor.rz.scp.css */
+:where(.bg-commissions-supplyMarket)[b-3c6etobnin] {
+  display: grid;
+  grid-template-columns: max-content;
+  gap: 1rem;
+  width: max-content;
+}
+:where(.bg-commissions-supplyMarket)[b-3c6etobnin]  .bg-all-commissions {
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  width: max-content;
+}
+:where(.bg-commissions-supplyMarket)[b-3c6etobnin]  .bg-board-section--supplyMarkets { width: 100%; }
+:where(.bg-commissions-supplyMarket)[b-3c6etobnin]  .supply-market-row {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1rem;
+  width: 100%;
+}
+:where(.bg-commissions-supplyMarket)[b-3c6etobnin]  :where(.supply-market-spot) {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: var(--supply-market-tint, var(--paper));
+}
+/* _content/Bottega.Components/CommissionSlotComponent.razor.rz.scp.css */
+:where(.bg-commission-slot)[b-rkiiw48hf3] {
+  position: relative;
+  width: var(--slot-size);
+  height: var(--slot-size);
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #e7e2d6;
+  border: calc(var(--slot-size) * .01667) solid var(--border);
+  overflow: hidden;
+  font-family: var(--font);
+  color: var(--ink);
+}
+:where(.bg-commission-slot).resource-VELLUM[b-rkiiw48hf3] { --slot-paper: #dfe9f5; background: var(--slot-paper); }
+:where(.bg-commission-slot).resource-GLASS[b-rkiiw48hf3] { --slot-paper: #ddeee4; background: var(--slot-paper); }
+:where(.bg-commission-slot).resource-BRONZE[b-rkiiw48hf3] { --slot-paper: #f5ebc8; background: var(--slot-paper); }
+:where(.bg-commission-slot).resource-MERCURY[b-rkiiw48hf3] { --slot-paper: #f4deda; background: var(--slot-paper); }
+:where(.bg-commission-slot).bg-commission-slot--occupied[b-rkiiw48hf3] {
+  background: color-mix(in srgb, var(--slot-paper, #e7e2d6) calc(var(--slot-opacity) * 100%), var(--card-backdrop, #292528));
+  border-color: color-mix(in srgb, var(--border) calc(var(--slot-opacity) * 100%), var(--card-backdrop, #292528));
+}
+:where(.bg-commission-slot).blocked-solid[b-rkiiw48hf3] { background: var(--owner-color, #626267); }
+
+:where(.bg-slot-inner)[b-rkiiw48hf3] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(var(--slot-size) * .05);
+  margin-top: calc(var(--slot-size) * .1333);
+}
+:where(.bg-slot-inner).occupied-slot[b-rkiiw48hf3] { margin-top: 0; }
+:where(.bg-slot-pips)[b-rkiiw48hf3] { display: flex; align-items: center; justify-content: center; gap: calc(var(--slot-size) * .01667); flex-wrap: wrap; }
+:where(.bg-slot-pips)[b-rkiiw48hf3]  .dice { --ds: calc(var(--slot-size) * .22); }
+:where(.bg-slot-rewards)[b-rkiiw48hf3] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(var(--slot-size) * .02);
+  text-align: center;
+}
+:where(.bg-slot-rewards)[b-rkiiw48hf3] { font-family: var(--font); font-weight: 700; font-size: calc(var(--slot-size) * .1); line-height: 1; }
+:where(.bg-slot-note)[b-rkiiw48hf3] {
+  position: absolute;
+  bottom: calc(var(--slot-size) * .1167);
+  font-size: calc(var(--slot-size) * .05);
+  color: #666;
+  font-style: italic;
+}
+/* _content/Bottega.Components/ComponentGallery.razor.rz.scp.css */
+:where(.gallery-shell)[b-8vk0bz5ndt] { min-height: 100vh; padding: 4rem clamp(1rem, 5vw, 6rem); background: radial-gradient(circle at 80% 10%, #4b4147, transparent 35%), #292528; }
+/* _content/Bottega.Components/EndGameScorePopup.razor.rz.scp.css */
+.end-score-overlay[b-38iaisz69x] {
+    position: fixed;
+    z-index: 100;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    overflow-y: auto;
+    padding: 1rem;
+    background: rgba(41, 37, 40, .94);
+}
+
+.end-score[b-38iaisz69x] {
+    --score-gold: #e3c38b;
+    --score-ink: #f5f3ec;
+    --score-muted: #bbbcc2;
+    box-sizing: border-box;
+    width: min(100%, 36rem);
+    max-height: calc(100dvh - 2rem);
+    overflow-y: auto;
+    padding: 1.5rem;
+    border: 1px solid rgba(227, 195, 139, .55);
+    border-radius: 6px;
+    background: #393237;
+    color: var(--score-ink);
+    font: .9rem 'Trebuchet MS', sans-serif;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, .25);
+}
+
+header[b-38iaisz69x] { text-align: center; }
+h1[b-38iaisz69x] { margin: 0; color: var(--score-gold); font: 400 1.6rem Georgia, serif; }
+.end-score__total[b-38iaisz69x] { margin: .5rem 0 1.25rem; color: var(--score-gold); font-size: 2.75rem; font-weight: 700; }
+.end-score__total span[b-38iaisz69x] { font-size: 1rem; font-weight: 400; }
+.end-score__scoring[b-38iaisz69x] { display: grid; gap: .55rem; margin: 0 0 1.5rem; }
+.end-score__scoring div[b-38iaisz69x] { display: flex; justify-content: space-between; gap: 1rem; }
+dt[b-38iaisz69x] { color: var(--score-muted); }
+dd[b-38iaisz69x] { margin: 0; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.end-score__rounds[b-38iaisz69x] { width: 100%; table-layout: fixed; border-collapse: collapse; font-size: .85rem; }
+caption[b-38iaisz69x] { caption-side: top; padding: 0 0 .75rem; color: var(--score-gold); text-align: left; font: 400 1.15rem Georgia, serif; }
+th[b-38iaisz69x], td[b-38iaisz69x] { padding: .7rem .25rem; border-bottom: 1px solid rgba(245, 243, 236, .14); text-align: center; font-variant-numeric: tabular-nums; }
+th:first-child[b-38iaisz69x] { width: 38%; text-align: left; overflow-wrap: anywhere; }
+thead th[b-38iaisz69x] { color: var(--score-gold); background: #292528; font-weight: 700; }
+tbody th[b-38iaisz69x] { color: var(--score-muted); font-weight: 400; }
+tbody tr:nth-child(even)[b-38iaisz69x] { background: rgba(187, 188, 194, .05); }
+footer[b-38iaisz69x] { display: flex; justify-content: center; margin-top: 1.5rem; }
+.end-score__new-game[b-38iaisz69x] { min-height: 2.65rem; min-width: 9rem; padding: .5rem 1.25rem; border: 1px solid var(--score-gold); border-radius: 3px; background: #4b4147; color: var(--score-ink); font: 700 .9rem 'Trebuchet MS', sans-serif; cursor: pointer; }
+.end-score__new-game:hover[b-38iaisz69x] { background: #393237; }
+.end-score__new-game:focus-visible[b-38iaisz69x] { outline: 2px solid var(--score-gold); outline-offset: 3px; }
+@media (max-width: 400px) {
+    .end-score[b-38iaisz69x] { padding: 1rem; }
+    .end-score__rounds[b-38iaisz69x] { font-size: .75rem; }
+}
+/* _content/Bottega.Components/FromDecks.razor.rz.scp.css */
+.bg-from-decks[b-zrnedzqs9f] {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    width: max-content;
+    min-width: 0;
+}
+
+.bg-from-decks__group[b-zrnedzqs9f] {
+    width: max-content;
+}
+
+:where(.bg-section__heading)[b-zrnedzqs9f] {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0 0 .7rem;
+    padding: .25rem 0;
+    color: #e3c38b;
+    font: 700 .78rem 'Trebuchet MS', sans-serif;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.bg-from-decks__group > .bg-section__heading[b-zrnedzqs9f] {
+    padding-left: calc((var(--card-equipment-market-slot-width, 70mm) - var(--card-width)) / 2);
+}
+
+.bg-from-decks__group:last-child .bg-card-equipmentMarket[b-zrnedzqs9f] {
+    grid-template-columns: repeat(3, var(--card-equipment-market-slot-width, 70mm));
+}
+
+.bg-from-decks__tabs[b-zrnedzqs9f] {
+    display: flex;
+    gap: .35rem;
+    margin-bottom: .7rem;
+}
+
+.bg-from-decks__tab[b-zrnedzqs9f] {
+    appearance: none;
+    border: 0;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    padding: .45rem .7rem;
+    background: transparent;
+    color: #bbbcc2;
+    cursor: pointer;
+    font: 700 .78rem 'Trebuchet MS', sans-serif;
+    text-transform: uppercase;
+}
+
+.bg-from-decks__tab.is-active[b-zrnedzqs9f] {
+    border-bottom-color: #e3c38b;
+    color: #e3c38b;
+}
+
+.bg-from-decks__tab:focus-visible[b-zrnedzqs9f] {
+    outline: 2px solid #e3c38b;
+    outline-offset: -2px;
+}
+/* _content/Bottega.Components/InventionComponent.razor.rz.scp.css */
+:where(.bg-invention-vp-badge)[b-k1b6t77vnr] { transform: translateY(calc(var(--card-width) * .03)); }
+:where(.bg-invention-header)[b-k1b6t77vnr] { flex: 0 0 calc(var(--card-width) * .016); }
+:where(.bg-invention-vp-badge)[b-k1b6t77vnr] { width: calc(var(--card-width) * .20); height: calc(var(--card-width) * .20); display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 50%; background: var(--vp-color); color: var(--paper); line-height: 1; box-shadow: 0 0 0 calc(var(--card-width) * .0067) var(--paper), 0 0 0 calc(var(--card-width) * .0111) var(--vp-color); }
+:where(.bg-invention-vp-number)[b-k1b6t77vnr] { font-size: calc(var(--card-width) * .047); font-weight: 700; line-height: 1; }
+:where(.bg-invention-vp-label)[b-k1b6t77vnr] { margin-top: calc(var(--card-width) * .0044); font-size: calc(var(--card-width) * .029); font-weight: 700; letter-spacing: 0; }
+:where(.bg-invention-body)[b-k1b6t77vnr] { padding-top: calc(var(--card-width) * .016); }
+:where(.bg-invention-section)[b-k1b6t77vnr] { display: flex; flex: 1 1 0; flex-direction: column; align-items: center; gap: calc(var(--card-width) * .008); min-height: 0; }
+:where(.bg-invention-section)[b-k1b6t77vnr] { flex: 1 0 auto; }
+:where(.bg-invention-section) .bg-invention-section-content[b-k1b6t77vnr] { flex: 0 0 auto; }
+:where(.bg-invention-section-label)[b-k1b6t77vnr] { flex: 0 0 auto; color: var(--accent); font-size: calc(var(--card-width) * .0336); font-weight: 700; letter-spacing: calc(var(--card-width) * .0032); text-transform: uppercase; }
+:where(.bg-invention-section-content)[b-k1b6t77vnr] { display: flex; flex: 1 1 auto; align-items: center; justify-content: center; width: 100%; min-height: 0; }
+:where(.bg-invention-divider)[b-k1b6t77vnr] { flex: 0 0 auto; height: 0; width: 100%; margin: calc(var(--card-width) * .0070668) auto; border-top: var(--card-section-divider); }
+:where(.bg-invention-req-table)[b-k1b6t77vnr] { width: 100%; border-collapse: collapse; font-size: calc(var(--card-width) * .0677328); }
+:where(.bg-invention-req-table) tr + tr td[b-k1b6t77vnr] { border-top: var(--card-item-divider); }
+:where(.bg-invention-req-table) td[b-k1b6t77vnr] { padding: calc(var(--card-width) * .02) calc(var(--card-width) * .0096); text-align: center; font-weight: 400; line-height: 1.5; vertical-align: middle; }
+:where(.bg-invention-reward-content)[b-k1b6t77vnr] { text-align: center; font-size: calc(var(--card-width) * .0677328); font-weight: 400; line-height: 1.35; }
+:where(.bg-invention-empty-note)[b-k1b6t77vnr] { color: #77756f; font-size: calc(var(--card-width) * .056444); font-style: italic; }
+/* _content/Bottega.Components/LegalActions.razor.rz.scp.css */
+.bg-legal-actions[b-bzmvc23fad] { display: flex; flex-direction: column; gap: .15rem; margin: 0; padding: 0; list-style: none; font: .78rem 'Trebuchet MS', sans-serif; }
+.bg-legal-actions__item[b-bzmvc23fad] { display: flex; align-items: baseline; gap: .5rem; min-width: 0; padding: .12rem 0; }
+.bg-legal-actions__index[b-bzmvc23fad] { flex: 0 0 1.5rem; color: #bbbcc2; font-variant-numeric: tabular-nums; text-align: right; }
+.bg-legal-actions__body[b-bzmvc23fad] { min-width: 0; }
+.bg-legal-actions__title-row[b-bzmvc23fad] { display: flex; flex-wrap: wrap; align-items: baseline; gap: .35rem .55rem; }
+.bg-legal-actions__kind[b-bzmvc23fad] { color: #e3c38b; font-size: .65rem; text-transform: uppercase; }
+.bg-legal-actions__title-row strong[b-bzmvc23fad] { font-weight: 700; overflow-wrap: anywhere; }
+.bg-legal-actions__body p[b-bzmvc23fad] { margin: .2rem 0 0; color: #bbbcc2; line-height: 1.35; overflow-wrap: anywhere; }
+.bg-legal-actions__cost[b-bzmvc23fad] { align-self: center; white-space: nowrap; color: #e3c38b; }
+.bg-legal-actions__empty[b-bzmvc23fad] { grid-column: 1 / -1; color: #bbbcc2; }
+/* _content/Bottega.Components/PlayerStatus.razor.rz.scp.css */
+.bg-player-status[b-uypkukxi03] { display: grid; max-width: 100%; min-width: 0; gap: .85rem; }
+.bg-player-status__summary[b-uypkukxi03] { display: grid; min-width: 0; gap: .55rem; }
+.bg-player-status__inventions[b-uypkukxi03], .bg-player-status__resources[b-uypkukxi03] { display: flex; flex-wrap: wrap; align-items: center; gap: .45rem 1rem; }
+.bg-player-status__item[b-uypkukxi03] { display: inline-flex; flex: 0 0 auto; align-items: center; gap: .35rem; color: inherit; font: .78rem 'Trebuchet MS', sans-serif; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.bg-player-status__resources[b-uypkukxi03]  .display-resources { --display-resources-size: calc(var(--slot-size) * .1667); }
+.bg-player-status__resources[b-uypkukxi03]  .bg-player-status__resource-icon { --bs: calc(var(--slot-size) * .1667); }
+.bg-player-status__invention-symbol[b-uypkukxi03] { width: .65rem; height: .9rem; margin: 0; }
+.bg-player-status[b-uypkukxi03]  .bg-player-status__empty { color: #bbbcc2; font: .78rem 'Trebuchet MS', sans-serif; }
+.bg-player-status__dice[b-uypkukxi03] { max-width: 100%; min-width: 0; }
+/* _content/Bottega.Components/RewardComponent.razor.rz.scp.css */
+:where(.bg-rewards-card)[b-62j4hb92ny], :where(.bg-rewards-invention)[b-62j4hb92ny] {
+    display: block;
+    width: 100%;
+}
+
+:where(.bg-reward-item)[b-62j4hb92ny] {
+    min-width: 0;
+}
+
+:where(.bg-reward-item) + .bg-reward-item[b-62j4hb92ny] {
+    border-top: var(--card-item-divider);
+}
+/* _content/Bottega.Components/SectionComponent.razor.rz.scp.css */
+:where(.bg-section)[b-v9s1wvmd54] {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    width: 100%;
+}
+
+:where(.bg-section__heading)[b-v9s1wvmd54] {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0 0 .7rem;
+    padding: .25rem 0;
+    color: #e3c38b;
+    font: 700 .78rem 'Trebuchet MS', sans-serif;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+:where(.bg-section__content)[b-v9s1wvmd54] {
+    min-width: 0;
+    width: 100%;
+}
+/* _content/Bottega.Components/SubChoicePanel.razor.rz.scp.css */
+.equipment-market-choice[b-8tfbocytcg] { box-sizing: border-box; display: flex; flex: 0 0 auto; min-width: max-content; align-items: center; gap: .45rem; }
+.equipment-market-choice__prompt[b-8tfbocytcg] { flex: 0 0 auto; color: #bbbcc2; white-space: nowrap; }
+.equipment-market-choice__parameter[b-8tfbocytcg] { display: inline-flex; flex: 0 0 auto; align-items: center; gap: .3rem; color: #bbbcc2; white-space: nowrap; }
+.equipment-market-choice__resource-set[b-8tfbocytcg], .equipment-market-choice__stepper[b-8tfbocytcg] { display: inline-flex; align-items: center; gap: .15rem; }
+.equipment-market-choice__resource-option[b-8tfbocytcg], .equipment-market-choice__resource-icon[b-8tfbocytcg] { display: inline-flex; width: var(--choice-control-size, 2.5rem); height: var(--choice-control-size, 2.5rem); min-height: var(--choice-control-size, 2.5rem); align-items: center; justify-content: center; padding: 0; border: 1px solid rgba(245, 243, 236, .38); border-radius: 2px; background: #292528; }
+.equipment-market-choice__resource-option[b-8tfbocytcg] { padding: 0 !important; }
+.equipment-market-choice__resource-option[b-8tfbocytcg]  .res-badge, .equipment-market-choice__resource-icon[b-8tfbocytcg]  .res-badge { --bs: var(--choice-resource-size, 1.25rem); margin: 0; }
+.equipment-market-choice__resource-option.is-selected[b-8tfbocytcg] { border-color: #e3c38b !important; background: #4b4147 !important; box-shadow: inset 0 0 0 1px #e3c38b; }
+.equipment-market-choice__resource-separator[b-8tfbocytcg], .equipment-market-choice__trade-arrow[b-8tfbocytcg] { color: #bbbcc2; }
+.equipment-market-choice__stepper[b-8tfbocytcg] { border: 1px solid rgba(245, 243, 236, .38); border-radius: 2px; background: #292528; }
+.equipment-market-choice__stepper-button[b-8tfbocytcg] { width: var(--choice-control-size, 2.25rem); min-height: var(--choice-control-size, 2.5rem) !important; padding: .2rem !important; border: 0 !important; background: transparent !important; font-size: var(--choice-stepper-font-size, 1.25rem) !important; }
+.equipment-market-choice__stepper-button:hover:not(:disabled)[b-8tfbocytcg] { background: #393237 !important; }
+.equipment-market-choice__stepper-value[b-8tfbocytcg] { min-width: var(--choice-control-size, 2.5rem); color: #f5f3ec; font-weight: 700; text-align: center; font-variant-numeric: tabular-nums; }
+.equipment-market-choice button[b-8tfbocytcg] { flex: 0 0 auto; min-height: var(--choice-control-size, 2rem); padding: .25rem .65rem; border: 1px solid rgba(245, 243, 236, .38); border-radius: 2px; background: #393237; color: #f5f3ec; font: inherit; white-space: nowrap; touch-action: manipulation; }
+.equipment-market-choice__apply[b-8tfbocytcg] { border-color: #e3c38b !important; background: #4b4147; font-weight: 700 !important; }
+.equipment-market-choice__forfeit[b-8tfbocytcg] { border-color: rgba(187, 188, 194, .55) !important; background: #4b4147 !important; }
+.equipment-market-choice button:disabled[b-8tfbocytcg] { opacity: .55; }
+.equipment-market-choice button:focus-visible[b-8tfbocytcg] { outline: 2px solid #e3c38b; outline-offset: 2px; }
+/* _content/Bottega.Components/SupplyMarketComponent.razor.rz.scp.css */
+:where(.supply-market-row)[b-2xog01k2ao] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2mm;
+  width: max-content;
+}
+/* _content/Bottega.Components/SupplyMarketSpotComponent.razor.rz.scp.css */
+.supply-market-spot[b-f3hg2erz5j] {
+    --card-width: 63.5mm;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    min-width: 0;
+    min-height: 0;
+    padding: 0;
+    border: 0;
+    border-radius: calc(var(--card-width) * var(--card-radius-factor));
+    background: transparent;
+    color: var(--ink);
+    font: .7rem 'Trebuchet MS', sans-serif;
+}
+
+.supply-market-title[b-f3hg2erz5j] {
+    flex: 0 0 auto;
+    align-self: flex-start;
+    margin: 0 0 .5rem;
+    color: #e3c38b;
+    font: 700 .8rem/1.35 'Trebuchet MS', sans-serif;
+    text-align: left;
+}
+
+.supply-market-spot.is-row-selectable[b-f3hg2erz5j] { cursor: pointer; }
+
+.supply-market-content-row[b-f3hg2erz5j] {
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex: 1 1 auto;
+    align-items: center;
+    justify-content: center;
+    gap: 8mm;
+    width: 100%;
+    min-height: 0;
+    padding: 1mm 3mm;
+    border-radius: inherit;
+    background: transparent;
+    color: var(--ink);
+}
+
+.supply-market-tint[b-f3hg2erz5j] {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: color-mix(in srgb, var(--paper) calc(var(--supply-market-background-opacity, 1) * 100%), var(--card-backdrop, #292528));
+    opacity: 1;
+    pointer-events: none;
+}
+
+.supply-market-occupants[b-f3hg2erz5j] {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    gap: calc(var(--commission-slot-size, var(--supply-market-size)) * .05);
+    min-height: 1.8rem;
+}
+
+.supply-market-occupant[b-f3hg2erz5j] {
+    position: relative;
+    box-sizing: border-box;
+    display: inline-grid;
+    flex: 0 0 auto;
+    width: var(--supply-market-worker-size, calc(var(--supply-market-size) * .96));
+    height: var(--supply-market-worker-size, calc(var(--supply-market-size) * .96));
+    place-items: center;
+    border: calc(var(--commission-slot-size, var(--supply-market-size)) * .01667) solid var(--border);
+    border-radius: 50%;
+    background: var(--supply-market-tint);
+}
+
+.supply-market-occupant.is-selectable[b-f3hg2erz5j] { border-color: rgba(227, 195, 139, .8); cursor: pointer; }
+.supply-market-occupant.is-selected[b-f3hg2erz5j] { border-color: #e3c38b; background: rgba(227, 195, 139, .2); }
+
+.supply-market-flow[b-f3hg2erz5j] {
+    position: relative;
+    display: flex;
+    flex: 0 0 auto;
+    min-width: max-content;
+    align-items: center;
+    justify-content: flex-start;
+    gap: calc(var(--supply-market-size) * .05);
+    white-space: nowrap;
+}
+
+.supply-market-flow > *[b-f3hg2erz5j] { flex: 0 0 auto; }
+.supply-market-cost[b-f3hg2erz5j], .supply-market-rewards[b-f3hg2erz5j] {
+    --slot-size: calc(var(--supply-market-size) * 1.2);
+    display: inline-flex;
+    align-items: center;
+    font-family: var(--font);
+    font-weight: 700;
+    font-size: calc(var(--commission-slot-size, var(--supply-market-size)) * .1);
+    line-height: 1;
+}
+.supply-market-cost[b-f3hg2erz5j] { gap: calc(var(--card-width) * .0192); }
+.supply-market-rewards[b-f3hg2erz5j] { gap: calc(var(--supply-market-size) * .0375); }
+.supply-market-arrow[b-f3hg2erz5j] { font-size: calc(var(--card-width) * .06912); color: var(--accent); }
+.supply-market-flow[b-f3hg2erz5j]  .supply-market-reward { display: inline-flex; align-items: center; gap: calc(var(--card-width) * .0096); font-size: calc(var(--card-width) * .056444); font-weight: 700; }
+.supply-market-flow[b-f3hg2erz5j]  .supply-market-resource-display { --display-resources-size: calc(var(--commission-slot-size, var(--supply-market-size)) * .16); }
+.supply-market-flow[b-f3hg2erz5j]  .res-badge { --bs: calc(var(--commission-slot-size, var(--supply-market-size)) * .16); }
+.supply-market-flow[b-f3hg2erz5j]  .supply-market-invention-symbol { display: inline-block; width: calc(var(--commission-slot-size, var(--supply-market-size)) * .0833); height: calc(var(--commission-slot-size, var(--supply-market-size)) * .1167); border: calc(var(--commission-slot-size, var(--supply-market-size)) * .00833) solid var(--paper); border-radius: calc(var(--commission-slot-size, var(--supply-market-size)) * .01); background: #75529b; box-shadow: 0 0 0 calc(var(--commission-slot-size, var(--supply-market-size)) * .005) #75529b; vertical-align: middle; }
+/* _content/Bottega.Components/Tableau.razor.rz.scp.css */
+.bg-tableau__heading[b-f9019z2kd5] {
+    margin: 0 0 .7rem;
+    padding: .25rem 0 .25rem calc((var(--tableau-slot-width, 70mm) - var(--card-width) - 4px) / 2);
+    color: #e3c38b;
+    font: 700 .78rem 'Trebuchet MS', sans-serif;
+    text-transform: uppercase;
+}
+
+.bg-tableau__grid[b-f9019z2kd5] {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(var(--tableau-columns, 4), var(--tableau-slot-width, 70mm));
+    align-content: start;
+    gap: .7rem 1rem;
+}
+
+.bg-tableau__slot[b-f9019z2kd5] {
+    min-width: 0;
+}

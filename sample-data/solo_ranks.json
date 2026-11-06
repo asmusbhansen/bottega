@@ -1,0 +1,6 @@
+{
+  "equipment_market_apprentice_threshold": 40,
+  "equipment_market_novice_threshold": 50,
+  "equipment_market_journeyman_threshold": 60,
+  "equipment_market_master_threshold": 70
+}

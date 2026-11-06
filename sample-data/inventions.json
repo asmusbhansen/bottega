@@ -1,0 +1,606 @@
+{
+  "inventions": [
+    {
+      "name": "Ornithopter",
+      "quantity": 1,
+      "vp": 4,
+      "requirements": [
+        {
+          "predicate": "HasWorkerSpots",
+          "trigger_counts": { "Three": 1, "Four": 1, "Six": 1 },
+          "alternatives": [
+            { "payment": [
+              { "kind": "Resource", "resource": "Vellum", "amount": 2 },
+              { "kind": "Resource", "resource": "Bronze", "amount": 2 }
+            ] }
+          ]
+        },
+        {
+          "predicate": "HasEquipment",
+          "theme": "Vellum",
+          "amount": 2,
+          "alternatives": []
+        }
+      ],
+      "rewards": [
+        {
+          "kind": "Trade",
+          "resource": null,
+          "amount": 0,
+          "max": 2
+        }
+      ]
+    },
+    {
+      "name": "Mechanical Knight",
+      "quantity": 1,
+      "vp": 4,
+      "requirements": [
+        {
+          "predicate": "WorkerOnCommission",
+          "theme": "Glass",
+          "slot": "High",
+          "amount": 1,
+          "alternatives": [
+            { "payment": [
+              { "kind": "Resource", "resource": "Bronze", "amount": 3 },
+              { "kind": "Resource", "resource": "Mercury", "amount": 1 }
+            ] }
+          ]
+        },
+        {
+          "predicate": "HasEquipment",
+          "theme": "Bronze",
+          "amount": 3,
+          "alternatives": []
+        }
+      ],
+      "rewards": [
+        {
+          "kind": "Demolish"
+        }
+      ]
+    },
+    {
+      "name": "Diving Suit",
+      "quantity": 1,
+      "vp": 4,
+      "requirements": [
+        {
+          "predicate": "WorkersOnEquipment",
+          "trigger_counts": { "Three": 1, "Four": 1 },
+          "alternatives": [
+            { "payment": [
+              { "kind": "Resource", "resource": "Vellum", "amount": 3 },
+              { "kind": "Resource", "resource": "Bronze", "amount": 1 }
+            ] }
+          ]
+        }
+      ],
+      "rewards": [
+        {
+          "kind": "ClaimInvention"
+        }
+      ]
+    },
+    {
+      "name": "Planetary Gear",
+      "quantity": 1,
+      "vp": 4,
+      "requirements": [
+        {
+          "predicate": "HasWorkerSpots",
+          "trigger_counts": { "Four": 1, "Six": 1 },
+          "alternatives": [
+            { "payment": [{ "kind": "Resource", "resource": "Mercury", "amount": 4 }] }
+          ]
+        },
+        {
+          "predicate": "HasEquipment",
+          "theme": "Mercury",
+          "amount": 2,
+          "alternatives": []
+        }
+      ],
+      "rewards": [
+        {
+          "kind": "UseSupplyMarket"
+        }
+      ]
+    },
+    {
+      "name": "Burning Lens",
+      "quantity": 1,
+      "vp": 4,
+      "requirements": [
+        {
+          "predicate": "WorkersOnEquipment",
+          "trigger_counts": { "Two": 1, "Three": 1 },
+          "alternatives": [
+            { "payment": [{ "kind": "Resource", "resource": "Mercury", "amount": 4 }] }
+          ]
+        }
+      ],
+      "rewards": [
+        {
+          "kind": "Gain",
+          "resource": "Any",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "Musical Fountain",
+      "quantity": 1,
+      "vp": 3,
+      "requirements": [
+        {
+          "predicate": "WorkerOnCommission",
+          "theme": "Glass",
+          "slot": "Any",
+          "amount": 2,
+          "alternatives": [
+            { "payment": [{ "kind": "Resource", "resource": "Glass", "amount": 3 }] }
+          ]
+        },
+        {
+          "predicate": "HasEquipment",
+          "theme": "Bronze",
+          "amount": 2,
+          "alternatives": []
+        }
+      ],
+      "rewards": [
+        {
+          "kind": "Reclaim",
+          "resource": null,
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "Printing Press",
+      "quantity": 1,
+      "vp": 3,
+      "requirements": [
+        {
+          "predicate": "HasEquipment",
+          "theme": "Vellum",
+          "amount": 2,
+          "alternatives": [
+            { "payment": [{ "kind": "Resource", "resource": "Glass", "amount": 3 }] }
+          ]
+        },
+        {
+          "predicate": "HasEquipment",
+          "theme": "Bronze",
+          "amount": 2,
+          "alternatives": []
+        }
+      ],
+      "rewards": [
+        {
+          "kind": "Gain",
+          "resource": "Any",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "Mechanical Timer",
+      "quantity": 1,
+      "vp": 3,
+      "requirements": [
+        {
+          "predicate": "WorkersOnEquipment",
+          "trigger_counts": { "One": 1, "Two": 1 },
+          "alternatives": [
+            { "payment": [
+              { "kind": "Resource", "resource": "Vellum", "amount": 4 }
+            ] }
+          ]
+        }
+      ],
+      "rewards": [
+        {
+          "kind": "Reclaim",
+          "resource": null,
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "Periscope",
+      "quantity": 1,
+      "vp": 3,
+      "requirements": [
+        {
+          "predicate": "WorkersOnEquipment",
+          "trigger_counts": { "Five": 1 },
+          "alternatives": [
+            { "payment": [{ "kind": "Resource", "resource": "Bronze", "amount": 3 }] }
+          ]
+        },
+        {
+          "predicate": "HasEquipment",
+          "theme": "Glass",
+          "amount": 2
+        }
+      ],
+      "rewards": [
+        {
+          "kind": "Gain",
+          "resource": "Glass",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "Proportional Compass",
+      "quantity": 1,
+      "vp": 2,
+      "requirements": [
+        {
+          "predicate": "HasWorkerSpots",
+          "trigger_counts": { "One": 1, "Five": 1 },
+          "alternatives": [
+            { "payment": [{ "kind": "Resource", "resource": "Bronze", "amount": 4 }] }
+          ]
+        }
+      ],
+      "rewards": [
+        {
+          "kind": "ClaimInvention"
+        }
+      ]
+    },
+    {
+      "name": "Surveyor's Quadrant",
+      "quantity": 1,
+      "vp": 2,
+      "requirements": [
+        {
+          "predicate": "WorkerOnCommission",
+          "theme": "Vellum",
+          "slot": "Med",
+          "amount": 1,
+          "alternatives": [
+            { "payment": [{ "kind": "Resource", "resource": "Vellum", "amount": 2 }] }
+          ]
+        },
+        {
+          "predicate": "WorkerOnCommission",
+          "theme": "Vellum",
+          "slot": "Low",
+          "amount": 1,
+          "alternatives": []
+        }
+      ],
+      "rewards": [
+        {
+          "kind": "Gain",
+          "resource": "Bronze",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "Camera Obscura",
+      "quantity": 1,
+      "vp": 2,
+      "requirements": [
+        {
+          "predicate": "WorkerOnCommission",
+          "theme": "Any",
+          "slot": "Med",
+          "amount": 1,
+          "alternatives": [
+            {
+              "payment": [{ "kind": "Resource", "resource": "Glass", "amount": 2 }]
+            }
+          ]
+        },
+        {
+          "predicate": "HasEquipment",
+          "theme": "Glass",
+          "amount": 2,
+          "alternatives": []
+        }
+      ],
+      "rewards": [
+        {
+          "kind": "Gain",
+          "resource": "Any",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "Star Calendar",
+      "quantity": 1,
+      "vp": 2,
+      "requirements": [
+        {
+          "predicate": "WorkersOnEquipment",
+          "trigger_counts": { "Six": 1 },
+          "alternatives": [
+            { "payment": [{ "kind": "Resource", "resource": "Mercury", "amount": 2 }] }
+          ]
+        },
+        {
+          "predicate": "HasEquipment",
+          "theme": "Mercury",
+          "amount": 2,
+          "alternatives": []
+        }
+      ],
+      "rewards": [
+        {
+          "kind": "Reclaim",
+          "resource": null,
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "Pocket Sundial",
+      "quantity": 1,
+      "vp": 2,
+      "requirements": [
+        {
+          "predicate": "WorkerOnCommission",
+          "slot": "High",
+          "amount": 1,
+          "alternatives": [
+            { "payment": [{ "kind": "Resource", "resource": "Bronze", "amount": 2 }] }
+          ]
+        }
+      ],
+      "rewards": [
+        {
+          "kind": "UseSupplyMarket",
+          "resource": null,
+          "amount": 0
+        }
+      ]
+    },
+    {
+      "name": "Mirror Glass",
+      "quantity": 1,
+      "vp": 2,
+      "requirements": [
+        {
+          "predicate": "WorkerOnCommission",
+          "theme": "Glass",
+          "slot": "Any",
+          "amount": 2,
+          "alternatives": [
+            { "payment": [{ "kind": "Resource", "resource": "Glass", "amount": 2 }] }
+          ]
+        },
+        {
+          "predicate": "HasEquipment",
+          "theme": "Glass",
+          "amount": 1
+        }
+      ],
+      "rewards": [
+        {
+          "kind": "Trade",
+          "resource": null,
+          "amount": 0,
+          "max": 2
+        }
+      ]
+    },
+    {
+      "name": "Optical Illusion",
+      "quantity": 1,
+      "vp": 2,
+      "requirements": [
+        {
+          "predicate": "WorkersOnEquipment",
+          "trigger_counts": { "Five": 1 },
+          "alternatives": [
+            { "payment": [{ "kind": "Resource", "resource": "Vellum", "amount": 2 }] }
+          ]
+        },
+        {
+          "predicate": "HasEquipment",
+          "theme": "Mercury",
+          "amount": 1
+        }
+      ],
+      "rewards": [
+        {
+          "kind": "Gain",
+          "resource": "Glass",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "Glass Sphere",
+      "quantity": 1,
+      "vp": 2,
+      "requirements": [
+        {
+          "predicate": "HasWorkerSpots",
+          "trigger_counts": { "Two": 1 },
+          "alternatives": [
+            { "payment": [{ "kind": "Resource", "resource": "Glass", "amount": 2 }] }
+          ]
+        },
+        {
+          "predicate": "HasEquipment",
+          "theme": "Glass",
+          "amount": 1
+        }
+      ],
+      "rewards": [
+        {
+          "kind": "Gain",
+          "resource": "Glass",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "Wind Gauge",
+      "quantity": 1,
+      "vp": 2,
+      "requirements": [
+        {
+          "predicate": "HasWorkerSpots",
+          "trigger_counts": { "One": 1 },
+          "alternatives": [
+            { "payment": [{ "kind": "Resource", "resource": "Mercury", "amount": 2 }] }
+          ]
+        },
+        {
+          "predicate": "HasEquipment",
+          "theme": "Vellum",
+          "amount": 1
+        }
+      ],
+      "rewards": [
+        {
+          "kind": "Reclaim",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "Printing Ink",
+      "quantity": 1,
+      "vp": 1,
+      "requirements": [
+        {
+          "predicate": "WorkerOnCommission",
+          "theme": "Bronze",
+          "slot": "Any",
+          "amount": 1
+        },
+        {
+          "predicate": "HasEquipment",
+          "theme": "Mercury",
+          "amount": 1
+        }
+      ],
+      "rewards": [
+        {
+          "kind": "Gain",
+          "resource": "Vellum",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "Invisible Ink",
+      "quantity": 1,
+      "vp": 1,
+      "requirements": [
+        {
+          "predicate": "WorkerOnCommission",
+          "theme": "Mercury",
+          "slot": "Med",
+          "amount": 1
+        }
+      ],
+      "rewards": [
+        {
+          "kind": "Gain",
+          "resource": "Mercury",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "Mechanical Hand",
+      "quantity": 1,
+      "vp": 1,
+      "requirements": [
+        {
+          "predicate": "HasEquipment",
+          "theme": "Bronze",
+          "amount": 2
+        }
+      ],
+      "rewards": [
+        {
+          "kind": "Gain",
+          "resource": "Vellum",
+          "amount": 2
+        }
+      ]
+    },
+    {
+      "name": "Water Clock",
+      "quantity": 1,
+      "vp": 1,
+      "requirements": [
+        {
+          "predicate": "HasWorkerSpots",
+          "trigger_counts": { "Two": 1, "Three": 1 }
+        }
+      ],
+      "rewards": [
+        {
+          "kind": "Gain",
+          "resource": "Mercury",
+          "amount": 2
+        }
+      ]
+    },
+    {
+      "name": "City Plan",
+      "quantity": 1,
+      "vp": 1,
+      "requirements": [
+        {
+          "predicate": "WorkerOnSupplyMarket",
+          "theme": "Vellum",
+          "amount": 1
+        },
+        {
+          "predicate": "HasEquipment",
+          "theme": "Vellum",
+          "amount": 1
+        }
+      ],
+      "rewards": [
+        {
+          "kind": "Gain",
+          "resource": "Vellum",
+          "amount": 1
+        }
+      ]
+    },
+    {
+      "name": "Cipher Wheel",
+      "quantity": 1,
+      "vp": 1,
+      "requirements": [
+        {
+          "predicate": "WorkerOnCommission",
+          "theme": "Bronze",
+          "slot": "Any",
+          "amount": 1
+        },
+        {
+          "predicate": "WorkerOnCommission",
+          "theme": "Mercury",
+          "slot": "Any",
+          "amount": 1
+        }
+      ],
+      "rewards": [
+        {
+          "kind": "Gain",
+          "resource": "Bronze",
+          "amount": 1
+        }
+      ]
+    }
+  ]
+}
