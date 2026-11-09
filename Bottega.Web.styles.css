@@ -231,6 +231,39 @@
     text-align: center;
 }
 
+.tutorial-popup__example-die[b-h0meceosch] {
+    display: inline-flex;
+    --card-width: 62.5mm;
+    border-radius: 2px;
+    animation: selectable-die-pulse 1.4s ease-in-out infinite;
+}
+
+.tutorial-popup .tutorial-popup__demo-action[b-h0meceosch] {
+    display: inline-flex;
+    margin-block: 1rem;
+    min-height: 3.2rem;
+    align-items: center;
+    justify-content: center;
+    padding: .36rem .72rem;
+    max-width: 100%;
+    font-size: 1.4rem;
+    line-height: 1.2;
+    font-weight: 700;
+    animation: available-action-pulse 1.4s ease-in-out infinite;
+}
+
+.tutorial-popup__demo-action:disabled[b-h0meceosch] {
+    cursor: default;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .tutorial-popup__example-die[b-h0meceosch],
+    .tutorial-popup .tutorial-popup__demo-action[b-h0meceosch] {
+        animation: none;
+        box-shadow: 0 0 5px 2px #b68a4e;
+    }
+}
+
 .tutorial-popup__welcome-details[b-h0meceosch] {
     display: grid;
     min-height: 0;

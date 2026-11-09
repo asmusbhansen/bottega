@@ -1,5 +1,52 @@
 const handlers = new WeakMap();
 
+export async function animateTutorialAction(game) {
+    const source = game.querySelector('.tutorial-popup__demo-action');
+    const target = game.querySelector('.equipment-market-lab__play');
+    if (!source || !target) return;
+    const start = source.getBoundingClientRect();
+    const end = target.getBoundingClientRect();
+    const sourceStyle = getComputedStyle(source);
+    const sourceScale = start.width / source.offsetWidth;
+    const button = source.cloneNode(true);
+    button.disabled = true;
+    button.setAttribute('aria-hidden', 'true');
+    for (const property of ['background', 'color', 'border', 'borderRadius', 'font', 'padding']) {
+        button.style[property] = sourceStyle[property];
+    }
+    Object.assign(button.style, {
+        position: 'fixed', left: `${start.left}px`, top: `${start.top}px`,
+        width: `${start.width}px`, height: `${start.height}px`, margin: '0',
+        minHeight: '0', boxSizing: 'border-box', zIndex: '10000',
+        pointerEvents: 'none', animation: 'none', display: 'flex',
+        alignItems: 'center', justifyContent: 'center', fontWeight: '700',
+        transformOrigin: 'top left', whiteSpace: 'nowrap',
+        padding: `${parseFloat(sourceStyle.paddingTop) * sourceScale}px ${parseFloat(sourceStyle.paddingLeft) * sourceScale}px`,
+        fontSize: `${parseFloat(sourceStyle.fontSize) * sourceScale}px`,
+    });
+    source.style.visibility = 'hidden';
+    document.body.append(button);
+    try {
+        const animation = button.animate([
+            { transform: 'translate(0, 0)' },
+            {
+                transform: `translate(${end.left - start.left}px, ${end.top - start.top}px) scale(${end.width / start.width}, ${end.height / start.height})`,
+            },
+        ], {
+            duration: matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 850,
+            easing: 'ease-in-out', fill: 'forwards',
+        });
+        await animation.finished;
+    } finally {
+        button.remove();
+        source.style.visibility = '';
+    }
+}
+
+export function focusTutorialAction(game) {
+    game.querySelector('.equipment-market-lab__play:not(:disabled)')?.focus({ preventScroll: true });
+}
+
 export function attach(game) {
     detach(game);
     let frame = 0;
