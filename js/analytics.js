@@ -1,8 +1,24 @@
 (() => {
     const enabled = location.hostname === 'asmusbhansen.github.io'
         && location.pathname.startsWith('/bottega/');
+    let lastEndpointPath;
 
     window.bottegaAnalytics = {
+        trackEndpoint(path) {
+            const pathname = new URL(path || './', document.baseURI).pathname.replace(/\/$/, '');
+            if (pathname === lastEndpointPath) return;
+            const endpoint = {
+                '/bottega': 'game',
+                '/bottega/game': 'game',
+                '/bottega/rules': 'rules',
+                '/bottega/pnp': 'pnp',
+                '/bottega/video': 'video',
+                '/bottega/sellsheet': 'sellsheet'
+            }[pathname];
+            if (!endpoint) return;
+            lastEndpointPath = pathname;
+            this.track('Endpoint Viewed', { endpoint });
+        },
         track(name, props = {}) {
             if (!enabled) return;
             try {

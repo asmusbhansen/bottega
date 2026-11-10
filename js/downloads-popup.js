@@ -8,7 +8,7 @@ export function attach(modal) {
             event.stopPropagation();
             modal.querySelector('[data-modal-close]').click();
         } else if (event.key === 'Tab') {
-            const controls = [...modal.querySelectorAll('button, a[href], select, input')];
+            const controls = [...modal.querySelectorAll('button, a[href], select, input, video[controls]')];
             const current = controls.indexOf(document.activeElement);
             const next = (current + (event.shiftKey ? -1 : 1) + controls.length) % controls.length;
             event.preventDefault();
@@ -24,6 +24,7 @@ export function attach(modal) {
 }
 
 export function detach(modal) {
+    modal.querySelectorAll('video').forEach(video => video.pause());
     handlers.get(modal)?.();
     handlers.delete(modal);
 }

@@ -82,7 +82,7 @@ export function attach(game) {
     window.visualViewport?.addEventListener('resize', scheduleFit);
     observeLayout();
     const handleKey = event => {
-        if (game.querySelector('.downloads-popup, .privacy-popup')) return;
+        if (game.querySelector('.downloads-popup, .privacy-popup, .video-popup')) return;
         if (event.isComposing || event.ctrlKey || event.altKey || event.metaKey) return;
         if (!game.contains(event.target) && event.target !== document.body) return;
 
