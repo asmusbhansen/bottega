@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "Bottega.Web",
   "resources": {
-    "hash": "sha256-QYEdmSJOvLkdUi9dv3s7k9/HsIebmoeuG8Zfc9hAuPw=",
+    "hash": "sha256-t34XzuBBX1KzYnCGqeoqXNnswYjSZ4gW33mYYW3Bj0M=",
     "jsModuleNative": {
       "dotnet.native.js": "sha256-1DK+nm58uZjvv7U2c/UlUp1zFjeBZnqXHFHBX/W1igo="
     },
@@ -18,8 +18,8 @@
     },
     "coreAssembly": {},
     "assembly": {
-      "Microsoft.AspNetCore.Components.wasm": "sha256-YLWQAmQzPcoLUr8gq3N+ZNIgnoZS5I+x3c6ba16Nt/U=",
-      "Microsoft.AspNetCore.Components.Web.wasm": "sha256-RKGJAPwx4nLPABmG0nIWoL+5mofv235N3oz7mFtaGpc=",
+      "Microsoft.AspNetCore.Components.wasm": "sha256-VFvodS35k06kZZcJFzfdJRXeaT9/+F+O62EUQGnf6Q4=",
+      "Microsoft.AspNetCore.Components.Web.wasm": "sha256-zCyLCfcUU5a4IudkUMx2asie+Dg09omjpLdkEsr3ofs=",
       "Microsoft.AspNetCore.Components.WebAssembly.wasm": "sha256-O5xq/7H9Ur5lpKmZ2K6+a/CO9O4ufF1INq2FG5lcf8M=",
       "Microsoft.Extensions.Configuration.wasm": "sha256-od574rRtVVRJj+24jbl8j3GdQFpxlJOpSx+pEMw1Q18=",
       "Microsoft.Extensions.Configuration.Abstractions.wasm": "sha256-XR+WUfg8LtnrwdXFBnV+qO3ROyp6cYCfl1AZajIAheM=",
@@ -44,13 +44,14 @@
       "System.Net.Primitives.wasm": "sha256-6tEArDdPnz/ej8gASsxYGdkuNZaBS+whkABk37MiRvM=",
       "System.Private.Uri.wasm": "sha256-7gnwcr9n70FNWIE/IhIm/qwY4FFD1F4wOjLWyud1glg=",
       "System.Runtime.InteropServices.JavaScript.wasm": "sha256-Sq+HcXvBvzwvgpuSvpx+s4BnVHliKhd3vXK6YMbmsWU=",
-      "System.Runtime.wasm": "sha256-ANlfqX+4XkPWB8Te18nqHotMyZpNrLPxbl9LxMYlbWY=",
+      "System.Runtime.wasm": "sha256-imXsLvdYhSBVVtTtaLO6tAwjyh/AtYsumUUqg+qx3WM=",
+      "System.Security.Cryptography.wasm": "sha256-xFGpNd5Ow1kxrIVbnvxLvlZP/ZS1MG3Ah3aFwGB7wbM=",
       "System.Text.Encodings.Web.wasm": "sha256-K73DaYnMj0DK4htIP2pXIhAOArQdt6/0IOoNgEb4rQc=",
       "System.Text.Json.wasm": "sha256-9CA2ABZS+SqcRkoIwPDftr4TqAxVBErJ0kfdpf0vtR0=",
-      "System.Private.CoreLib.wasm": "sha256-SQRODMSb8gUVwidP8CXMq34rj0g+uUb6Y0bSkU+zT/c=",
-      "Bottega.Components.wasm": "sha256-fIxtshomsLmen32EsgbykmXsGtderIqXZ/Yx4adL830=",
-      "Bottega.Core.wasm": "sha256-frFxcsQdt90UTHU1ExE33hK48RihS/vL16nxYdO1DOI=",
-      "Bottega.Web.wasm": "sha256-dNwbwgWreXgvFxgU7XfEN/7J9mFmGWJxEVOgyeYnQ/Q="
+      "System.Private.CoreLib.wasm": "sha256-ea1h2AglyRNsA93E1R/6L8mki0hkOrqU7B9wDdLEkv8=",
+      "Bottega.Components.wasm": "sha256-K1zyM8/QfJcSp3XC3ji/IBM3tDsSk4YUGL9lzX9uYL0=",
+      "Bottega.Core.wasm": "sha256-cwwvhE6Iqsg/s4ROU3BJpP5LJk5kKcqc09TUrpluAUc=",
+      "Bottega.Web.wasm": "sha256-04czhG2JtTwJCAypK7yfOIffIgpLuw3behUbLxuVwX0="
     }
   },
   "cacheBootResources": true,

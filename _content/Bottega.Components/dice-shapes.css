@@ -246,6 +246,16 @@
   line-height: 1.15;
 }
 
+.bg-card-name--themed {
+  display: grid;
+  grid-template-columns: 1em minmax(0, 1fr) 1em;
+  align-items: center;
+  gap: .3em;
+}
+.bg-card-title { min-width: 0; overflow-wrap: anywhere; }
+.bg-card-theme { display: flex; width: 1em; height: 1em; align-items: center; justify-content: center; }
+.bg-card-theme .bg-symbol { display: block; width: 100%; height: 100%; }
+
 .bg-card-art {
   position: relative;
   flex: 0 1 auto;

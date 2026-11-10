@@ -44,7 +44,7 @@
     document.head.appendChild(script);
 
     document.addEventListener('click', event => {
-        const link = event.target.closest?.('a[download]');
+        const link = event.target.closest?.('a[href]');
         if (!link) return;
         const url = new URL(link.href, location.href);
         if (url.origin !== location.origin) return;

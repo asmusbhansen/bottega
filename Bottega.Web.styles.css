@@ -192,20 +192,22 @@ section[aria-labelledby="solo-play"][b-85qaw53wnl] { display: flow-root; }
     .sell-sheet__invention-card[b-t0blpejzx5] { width: 105px; --sell-sheet-card-width: 105px; }
 }
 @media print {
-    @page { size: A4; margin: 8mm; }
-    .sell-sheet-shell[b-t0blpejzx5] { padding: 0; background: white; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+    @page sell-sheet { size: A4; margin: 0; }
+    .sell-sheet-shell[b-t0blpejzx5] { min-height: 0; padding: 0; background: white; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
     .sell-sheet-shell[b-t0blpejzx5]  .print-play__toolbar { display: none; }
-    .sell-sheet[b-t0blpejzx5] { width: 194mm; margin: 0; padding: 7mm 8mm 4mm; box-shadow: none; }
+    .sell-sheet[b-t0blpejzx5] { page: sell-sheet; display: flex; flex-direction: column; width: 210mm; min-height: 297mm; margin: 0; padding: 8mm; box-shadow: none; }
     .sell-sheet h1[b-t0blpejzx5] { font-size: 42pt; }
     .sell-sheet__subtitle[b-t0blpejzx5] { margin: 1mm 0 2mm; font-size: 15pt; }
     .sell-sheet__header .sell-sheet__hook[b-t0blpejzx5] { margin-bottom: 3mm; font-size: 10pt; }
     .sell-sheet__facts[b-t0blpejzx5] { padding: 2mm 0; }
-    .sell-sheet__showcase[b-t0blpejzx5] { padding-top: 29mm; margin-top: 2mm; }
-    .sell-sheet__journey[b-t0blpejzx5] { width: 70%; margin: 0 auto; }
+    .sell-sheet__showcase[b-t0blpejzx5] { flex: 1 0 auto; display: flex; align-items: center; padding-top: 15mm; margin-top: 2mm; }
+    .sell-sheet__journey[b-t0blpejzx5] { position: relative; top: 3mm; width: 70%; margin: 0 auto; }
     .sell-sheet h2[b-t0blpejzx5] { font-size: 10pt; }
     .sell-sheet__callout p[b-t0blpejzx5], .sell-sheet__worker-note p[b-t0blpejzx5] { font-size: 8pt; line-height: 1.35; }
     .sell-sheet__worker-note[b-t0blpejzx5] { width: 48%; bottom: 1%; }
     .sell-sheet__callout[b-t0blpejzx5] { padding: 2mm 3mm; }
+    .sell-sheet__callout h2[b-t0blpejzx5] { margin-bottom: 1mm; }
+    .sell-sheet__buy[b-t0blpejzx5] { top: 20%; }
     .sell-sheet__bottom[b-t0blpejzx5] { gap: 4mm; padding-top: 3mm; }
     .sell-sheet__inventions[b-t0blpejzx5] { grid-template-columns: minmax(0, 1fr) 28mm; gap: 3mm; }
     .sell-sheet__invention-card[b-t0blpejzx5] { width: 28mm; --sell-sheet-card-width: 28mm; }
