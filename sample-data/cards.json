@@ -376,7 +376,7 @@
       "build_rewards": [
         {
           "kind": "Gain",
-          "resource": "Mercury",
+          "resource": "Glass",
           "amount": 1
         }
       ],
@@ -418,7 +418,7 @@
       "build_rewards": [
         {
           "kind": "Gain",
-          "resource": "Glass",
+          "resource": "Mercury",
           "amount": 1
         }
       ],

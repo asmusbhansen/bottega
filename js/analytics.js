@@ -9,7 +9,6 @@
             if (pathname === lastEndpointPath) return;
             const endpoint = {
                 '/bottega': 'game',
-                '/bottega/game': 'game',
                 '/bottega/rules': 'rules',
                 '/bottega/pnp': 'pnp',
                 '/bottega/video': 'video',
@@ -28,6 +27,26 @@
         }
     };
 
+    document.addEventListener('click', event => {
+        const target = event.target.closest?.('[data-analytics-event]');
+        if (target?.dataset.analyticsEvent) {
+            window.bottegaAnalytics.track(target.dataset.analyticsEvent);
+        }
+
+        const link = event.target.closest?.('a[href]');
+        if (!link) return;
+        const url = new URL(link.href, location.href);
+        if (url.origin !== location.origin) return;
+        if (url.pathname.endsWith('/rulebook.pdf')) {
+            window.bottegaAnalytics.track('Rulebook Downloaded');
+        } else if (link.dataset.downloadKind === 'print-and-play') {
+            window.bottegaAnalytics.track('Print and Play Downloaded', {
+                paper_size: link.dataset.paperSize,
+                shrink: link.dataset.shrink
+            });
+        }
+    });
+
     if (!enabled) return;
 
     window.plausible = window.plausible || function () {
@@ -42,19 +61,4 @@
     script.async = true;
     script.src = 'https://plausible.io/js/pa-krvgLcArft5GkFxamqD89.js';
     document.head.appendChild(script);
-
-    document.addEventListener('click', event => {
-        const link = event.target.closest?.('a[href]');
-        if (!link) return;
-        const url = new URL(link.href, location.href);
-        if (url.origin !== location.origin) return;
-        if (url.pathname.endsWith('/rulebook.pdf')) {
-            window.bottegaAnalytics.track('Rulebook Downloaded');
-        } else if (link.dataset.downloadKind === 'print-and-play') {
-            window.bottegaAnalytics.track('Print and Play Downloaded', {
-                paper_size: link.dataset.paperSize,
-                shrink: link.dataset.shrink
-            });
-        }
-    });
 })();

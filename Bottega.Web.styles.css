@@ -9,6 +9,7 @@
 .equipment-market-lab__confirmation-actions button[b-rt2v4j8wo2] { min-height: 2rem; padding: .3rem .8rem; border: 1px solid rgba(227, 195, 139, .75); border-radius: 2px; background: #393237; color: #f5f3ec; font: inherit; cursor: pointer; }
 .equipment-market-lab__confirmation-actions button:focus-visible[b-rt2v4j8wo2] { outline: 2px solid #e3c38b; outline-offset: 3px; }
 .equipment-market-lab__confirmation-confirm[b-rt2v4j8wo2] { background: #4b4147 !important; }
+.equipment-market-lab__confirmation-actions button:disabled[b-rt2v4j8wo2] { opacity: .5; cursor: default; }
 /* /../../tools/Bottega.Components.Playground/DownloadsPopup.razor.rz.scp.css */
 .downloads-popup[b-bxbypn1vim] { position: fixed; inset: 0; z-index: 200; display: grid; place-items: center; padding: 1rem; background: #0009; font-family: var(--font, 'Trebuchet MS', sans-serif); }
 .downloads-popup__panel[b-bxbypn1vim] { box-sizing: border-box; width: min(100%, 28rem); max-height: 90dvh; overflow: auto; padding: 1.25rem; border: 1px solid #e3c38b; border-radius: 2px; background: #393237; color: #f5f3ec; }
@@ -585,6 +586,16 @@ figcaption[b-46vqmk60gq] { contain: inline-size; margin-top: 2mm; font: 10pt/1.4
 .video-popup__header[b-x7agfuxaxz] { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; }
 .video-popup h2[b-x7agfuxaxz] { margin: 0; font-size: 1.4rem; color: #e3c38b; }
 .video-popup video[b-x7agfuxaxz] { display: block; width: 100%; max-height: 60dvh; aspect-ratio: 16 / 9; background: #000; object-fit: contain; }
-.video-popup button[b-x7agfuxaxz] { min-height: 2.5rem; padding: .4rem .75rem; border: 1px solid #e3c38b; border-radius: 2px; background: #4b4147; color: #f5f3ec; font: inherit; cursor: pointer; }
-.video-popup__actions[b-x7agfuxaxz] { display: flex; justify-content: flex-end; margin-top: 1rem; }
+.video-popup__navigation[b-x7agfuxaxz] { display: flex; flex-wrap: nowrap; justify-content: center; gap: .75rem; margin-top: 1rem; }
+.video-popup__navigation a[b-x7agfuxaxz],
+.video-popup__navigation button[b-x7agfuxaxz] { display: inline-flex; min-width: 0; flex: 1 1 0; align-items: center; justify-content: center; padding: .4rem .45rem; border: 1px solid #e3c38b; border-radius: 2px; background: #4b4147; color: #f5f3ec; font: inherit; text-align: center; text-decoration: none; white-space: nowrap; }
+.video-popup__navigation a:hover[b-x7agfuxaxz],
+.video-popup__navigation button:hover[b-x7agfuxaxz] { background: #55494f; }
+.video-popup__navigation button[b-x7agfuxaxz] { cursor: pointer; }
 .video-popup :focus-visible[b-x7agfuxaxz] { outline: 2px solid white; outline-offset: 3px; }
+
+@media (max-width: 32rem) {
+    .video-popup__navigation[b-x7agfuxaxz] { gap: .3rem; }
+    .video-popup__navigation a[b-x7agfuxaxz],
+    .video-popup__navigation button[b-x7agfuxaxz] { padding: .35rem .2rem; font-size: .7rem; }
+}
